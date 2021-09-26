@@ -1,0 +1,2919 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        html,body {      
+            background-color:dimgrey;margin:0px;width:100%;padding:0;
+        }
+        header{
+        width:100%;height:160px;text-align:center;color:black;font-size:x-large;
+        margin:0; position:absolute;left:50%;margin-left:-50%;font-weight:900;
+        color:black; background-color:white; 
+        }
+        table{
+        opacity:1.0;
+        margin:auto;
+        font-size:large;
+        position:absolute;
+        height:5px;width:450px; font-size:small;margin:0 auto; left:50%; margin-left:-225px;
+        }
+        hr{
+            width:1000px;
+        }
+        .tb1{opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:-515px; top:30%;
+
+        }
+
+
+        .tb2{opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:335px; }
+        .tb3{
+        opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:330px; top:30%;
+    }
+        a:hover {
+            background-color: white;
+            text-decoration-line: underline;
+        }
+
+        a:visited {
+            font-weight: bold;
+            color: black;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+        section1{
+            margin:0 auto; position:absolute;left:50%;margin-left:-30%; background-color:floralwhite; width:200px;height:800px;
+        }
+        section2{
+            margin:0 auto; position:absolute;left:50%;margin-left:-370px; background-color:white; width:200px;height:800px;
+        }
+        section3{
+            margin:0 auto; position:absolute;left:50%;margin-left:-170px; background-color:white; width:800px;height:400px;background-color:white; border:1px solid;
+        }
+        section4{
+            margin:0 auto; position:absolute;left:50%;margin-left:-170px; background-color:white; width:800px;height:100px;background-color:white; border:1px solid;top:610px;
+
+        }
+        section5{
+             margin:0 auto; position:absolute;left:50%;margin-left:-170px; background-color:white; width:800px;height:300px;background-color:black; border:1px solid;top:710px;
+        }
+
+        .td1{
+            height:40px; width:100px; font-size:larger; font-weight:900;
+        }
+        .td2{
+              height:40px; width:100px; font-size:larger; font-weight:900; 
+        }
+        .pos{
+            color:white;
+            background-color:dimgrey;
+            cursor:pointer;
+        }
+        .block{
+            color:white;
+            background-color:lightgray;
+            cursor:pointer;
+        }
+        .btn{
+            background-color:floralwhite;
+            font-weight:900;
+            cursor:pointer;
+        }
+        .btn1{
+            background-color:floralwhite;
+            font-weight:900;
+             cursor:pointer;
+        }
+        .back {left:30px;background:url('영화선택.png') center center / 100% no-repeat;
+           position:absolute;top:40%;transform:translateY(-50%);padding:50px;cursor:pointer;
+	    }
+	    .go {right:30px;background:url('결제선택.png') center center / 100% no-repeat;
+            position:absolute;top:40%;transform:translateY(-50%);padding:50px;cursor:pointer;
+	     }
+        .close{
+            right:-5%;background:url('close.png') center center / 100% no-repeat;
+            position:absolute;top:2%;transform:translateY(-50%);padding:60px;cursor:pointer;
+           
+    }
+        .diatable{
+            width:800px;margin-left:-380px; margin-top:20px;
+        }
+  
+
+    </style>
+    <script>
+        var place = "";
+        var abs_count = 0;
+        var areanum = 0;
+        var clickcount = 0;
+        var counted_people = 0;
+        var area = 1;
+        var con = 0;
+        var btn_num1 = 0;
+        var btn_num2 = 0;
+        var count_n = 1;
+        var chk_num = 0;
+        var date_index = 0;
+        var array0 = new Array();
+        var array1 = new Array();
+        var array = new Array();
+        var array1_1 = new Array();
+        var array1_2 = new Array();
+        var array1_3 = new Array();
+        var array1_4 = new Array();
+        var array1_5 = new Array();
+        var array1_6 = new Array();
+        var array1_7 = new Array();
+        var array1_8 = new Array();
+        var array1_9 = new Array();
+        var array1_10 = new Array();
+        var array1_11 = new Array();
+        var array1_12 = new Array();
+        var seat_A = new Array();
+        var result = new Array();
+        var today1 = new Array();
+        var array2_1 = new Array();
+            var array2_2 = new Array();
+            var array2_3 = new Array();
+            var array2_4 = new Array();
+            var array2_5 = new Array();
+        var array2_6 = new Array();
+                        value = localStorage.getItem('today1_movie1');               
+                storedStorage = JSON.parse(value);                
+                for (i = 0; i < 6; i++) {
+                    array2_1[i] = storedStorage[i];
+                }
+           
+     
+                value = localStorage.getItem('today2_movie1');             
+                storedStorage = JSON.parse(value);                
+                for (i = 0; i < 6; i++) {
+                    array2_2[i] = storedStorage[i];
+                    
+                }
+
+
+                value = localStorage.getItem('today3_movie1');              
+                storedStorage = JSON.parse(value);                
+                for (i = 0; i < 6; i++) {
+                    array2_3[i] = storedStorage[i];
+                    
+                }
+
+
+                value = localStorage.getItem('today4_movie1');
+                storedStorage = JSON.parse(value); 
+                for (i = 0; i < 6; i++) {
+                    array2_4[i] = storedStorage[i];
+                }
+            
+
+
+                value = localStorage.getItem('today5_movie1');                
+                storedStorage = JSON.parse(value);
+                for (i = 0; i < 6; i++) {
+                    array2_5[i] = storedStorage[i];
+            }
+
+            value = localStorage.getItem('today6_movie1');                
+                storedStorage = JSON.parse(value);
+                for (i = 0; i < 6; i++) {
+                    array2_6[i] = storedStorage[i];
+                }
+
+        var image = localStorage.getItem('image');
+        var area_name = "";
+        seat_A = [3, 7, 9, 11, 13, 15, 17];
+        seat_B_odd = [3, 5, 7, 9, 11, 13, 15, 17];
+        seat_B_even =[4, 6, 8, 10, 12, 14, 16, 18];
+        seat_C_odd = [1, 3, 5, 7, 9, 11, 13, 15, 17];
+        seat_C_even = [2, 4, 6, 8, 10, 12, 14, 16, 18];
+        seat = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
+        moviename1 = ['리틀포레스트', '1987', '부산행', '청년경찰', '국제시장'];
+        var total_people = 0;
+        function last() {
+            var image = localStorage.getItem('image');
+            td10_1 = document.getElementById('td10_1');
+            td10_2 = document.getElementById('td10_2');
+            td10_3 = document.getElementById('td10_3');
+            td10_4 = document.getElementById('td10_4');
+            td10_5 = document.getElementById('td10_5');
+            td10_6 = document.getElementById('td10_6');
+            var a = document.getElementById('finish');
+
+            
+            a.close();
+            alert("결제완료");
+            if (image == 1) {
+                localStorage.setItem('movie1',btn_num1 + btn_num2 + parseInt(localStorage.getItem('movie1')));
+            }
+            else if (image == 2) {
+                localStorage.setItem('movie2',btn_num1 + btn_num2 + parseInt(localStorage.getItem('movie2')));
+            }
+            else if (image == 3) {
+                localStorage.setItem('movie3',btn_num1 + btn_num2 + parseInt(localStorage.getItem('movie3')));
+            }
+            else if (image == 4) {
+                localStorage.setItem('movie4',btn_num1 + btn_num2 + parseInt(localStorage.getItem('movie4')));
+            }
+            else if (image == 5) {
+                localStorage.setItem('movie5',btn_num1 + btn_num2 + parseInt(localStorage.getItem('movie5')));
+            }
+            
+            abc = array1_1.concat(array1_2, array1_3, array1_4, array1_5, array1_6, array1_7, array1_8, array1_9, array1_10, array1_11, array1_12);
+            if (place == "가산디지털") {
+                localStorage.removeItem('SEOUL1')
+                localStorage.setItem('SEOUL1', JSON.stringify(abc));
+            }
+            else if (place == "가양") {
+                localStorage.removeItem('SEOUL2')
+                localStorage.setItem('SEOUL2', JSON.stringify(abc));
+            }
+            else if (place  == "건대입구") {
+                localStorage.removeItem('SEOUL3')
+                localStorage.setItem('SEOUL3', JSON.stringify(abc));
+            }
+            else if (place  == "강동") {
+               localStorage.removeItem('SEOUL4')
+                localStorage.setItem('SEOUL4', JSON.stringify(abc));
+            }
+            else if (place  == "김포공항") {
+                localStorage.removeItem('SEOUL5')
+                localStorage.setItem('SEOUL5', JSON.stringify(abc));
+            }
+            else if (place  == "신도림") {
+                localStorage.removeItem('SEOUL6')
+                localStorage.setItem('SEOUL6', JSON.stringify(abc));
+            }
+
+
+            else if (place  == "안양") {
+                localStorage.removeItem('GIDO1')
+                localStorage.setItem('GIDO1', JSON.stringify(abc));
+            }
+            else if (place  == "수원") {
+                localStorage.removeItem('GIDO2')
+                localStorage.setItem('GIDO2', JSON.stringify(abc));
+            }
+            else if (place  == "천안") {
+                localStorage.removeItem('GIDO3')
+                localStorage.setItem('GIDO3', JSON.stringify(abc));
+            }
+            else if (place  == "안산") {
+                localStorage.removeItem('GIDO4')
+                localStorage.setItem('GIDO4', JSON.stringify(abc));
+            }
+            else if (place  == "2_5") {
+                localStorage.removeItem('GIDO5')
+                localStorage.setItem('GIDO5', JSON.stringify(abc));
+            }
+            else if (place  == "2_6") {
+                localStorage.removeItem('GIDO6')
+                localStorage.setItem('GIDO6', JSON.stringify(abc));
+            }
+
+
+
+
+
+            else if (place  == "대전") {
+                localStorage.removeItem('CHEONG1')
+                localStorage.setItem('CHEONG1', JSON.stringify(abc));
+            }
+            else if (place  == "서산") {
+                localStorage.removeItem('CHEONG2');
+                localStorage.setItem('CHEONG2', JSON.stringify(abc));
+            }
+            else if (place  == "청주") {
+                localStorage.removeItem('CHEONG3')
+                localStorage.setItem('CHEONG3', JSON.stringify(abc));
+            }
+            else if (place  == "3_4") {
+                localStorage.removeItem('CHEONG4')
+                localStorage.setItem('CHEONG4', JSON.stringify(abc));
+            }
+            else if (place  == "3_5") {
+                localStorage.removeItem('CHEONG5')
+                localStorage.setItem('CHEONG5', JSON.stringify(abc));
+            }
+            else if (place  == "3_6") {
+                localStorage.removeItem('CHEONG6')
+                localStorage.setItem('CHEONG6', JSON.stringify(abc));
+            }
+
+
+
+
+
+
+
+            else if (place  == "광주") {
+                localStorage.removeItem('LADO1')
+                localStorage.setItem('LADO1', JSON.stringify(abc));
+            }
+            else if (place  == "군산") {
+                localStorage.removeItem('LADO2')
+                localStorage.setItem('LADO2', JSON.stringify(abc));
+            }
+            else if (place  == "전주") {
+                localStorage.removeItem('LADO3')
+                localStorage.setItem('LADO3', JSON.stringify(abc));
+            }
+            else if (place  == "4_4") {
+                localStorage.removeItem('LADO4')
+                localStorage.setItem('LADO4', JSON.stringify(abc));
+            }
+            else if (place  == "4_5") {
+                localStorage.removeItem('LADO5')
+                localStorage.setItem('LADO5', JSON.stringify(abc));
+            }
+            else if (place  == "4_6") {
+                localStorage.removeItem('LADO6')
+                localStorage.setItem('LADO6', JSON.stringify(abc));
+            }
+
+
+
+
+
+
+            else if (place  == "경산") {
+                localStorage.removeItem('SANG1')
+                localStorage.setItem('SANG1', JSON.stringify(abc));
+            }
+            else if (place  == "대구") {
+                localStorage.removeItem('SANG2')
+                localStorage.setItem('SANG2', JSON.stringify(abc));
+            }
+            else if (place  == "부산") {
+                localStorage.removeItem('SANG3')
+                localStorage.setItem('SANG3', JSON.stringify(abc));
+            }
+            else if (place  == "경주") {
+                localStorage.removeItem('SANG4')
+                localStorage.setItem('SANG4', JSON.stringify(abc));
+            }
+            else if (place  == "5_5") {
+                localStorage.removeItem('SANG5')
+                localStorage.setItem('SANG5', JSON.stringify(abc));
+            }
+            else if (place  == "5_6") {
+                localStorage.removeItem('SANG6')
+                localStorage.setItem('SANG6', JSON.stringify(abc));
+            }
+
+
+
+
+
+
+
+            else if (place  == "춘천") {
+                localStorage.removeItem('WON1')
+                localStorage.setItem('WON1', JSON.stringify(abc));
+            }
+            else if (place  == "6_2") {
+                localStorage.removeItem('WON2')
+                localStorage.setItem('WON2', JSON.stringify(abc));
+            }
+            else if (place  == "6_3") {
+                localStorage.removeItem('WON3')
+                localStorage.setItem('WON3', JSON.stringify(abc));
+            }
+            else if (place  == "6_4") {
+                localStorage.removeItem('WON4')
+                localStorage.setItem('WON4', JSON.stringify(abc));
+            }
+            else if (place  == "6_5") {
+                localStorage.removeItem('WON5')
+                localStorage.setItem('WON5', JSON.stringify(abc));
+            }
+            else if (place  == "6_6") {
+                localStorage.removeItem('WON6')
+                localStorage.setItem('WON6', JSON.stringify(abc));
+            }
+
+            location.reload();
+        }
+        function go() {
+
+            if (total_people == count_n-1) {
+                var a = document.getElementById('finish');
+                var image = localStorage.getItem('image');
+                var tbimg = document.getElementById('tbimg');
+                var infor5 = document.getElementById('infor7');
+                var moviegrade = document.getElementById('moviegrade');
+                var moviename = document.getElementById('moviename');
+                var moviedate = document.getElementById('moviedate');
+                var moviepeople = document.getElementById('moviepeople');
+                var adult = document.getElementById('adult');
+                var young = document.getElementById('young');
+                var movieseat = document.getElementById('movieseat');
+                var moviearea = document.getElementById('moviearea');
+                var name1 = document.getElementById('name2');
+                var prize1 = document.getElementById('prize1');
+                var prize2 = document.getElementById('prize2');
+                var total = document.getElementById('total');
+                var all = 0;
+                file_name1 = localStorage.getItem('file1_name1');
+                file_name2 = localStorage.getItem('file1_name2');
+                file_name3 = localStorage.getItem('file1_name3');
+                file_name4 = localStorage.getItem('file1_name4');
+                file_name5 = localStorage.getItem('file1_name5');
+                file_name6 = localStorage.getItem('file1_name6');
+                total1 = 11000 * btn_num2 + 9000 * btn_num1;
+                a.showModal();
+                if (image == 1) {
+                    moviename.innerHTML = moviename1[image - 1];
+                    tbimg.src = file_name1;
+                    movieseat.innerHTML = infor5.outerText;
+                    moviepeople.innerHTML = "성인 : " + btn_num2 + "명" + " " + "청소년 : " + btn_num1 + "명"
+                    moviedate.innerHTML = date.outerText;
+                    moviearea.innerHTML = name1.outerText;
+                    if (btn_num2 > 0)
+                        prize1.innerHTML = "성인     " + "11,000원 X " + btn_num2;
+                    if (btn_num1 > 0)
+                        prize2.innerHTML = "청소년     " + "9,000원 X " + btn_num1;
+                    total.innerHTML = total1 + "원";
+                    
+
+                }
+                else if (image == 2) {
+                    moviename.innerHTML = moviename1[image - 1];
+                    tbimg.src = file_name2;
+                    movieseat.innerHTML = infor5.outerText;
+                    moviepeople.innerHTML = "성인 : " + btn_num2 + "명" + " " + "청소년 : " + btn_num1 + "명"
+                    moviedate.innerHTML = date.outerText;
+                    moviearea.innerHTML = name1.outerText;
+                    if (btn_num2 > 0)
+                        prize1.innerHTML = "성인     " + "11,000원 X " + btn_num2;
+                    if (btn_num1 > 0)
+                        prize2.innerHTML = "청소년     " + "9,000원 X " + btn_num1;
+                    total.innerHTML = total1 + "원";
+                }
+                else if (image == 3) {
+                    moviename.innerHTML = moviename1[image - 1];
+                    tbimg.src = file_name3;
+                    movieseat.innerHTML = infor5.outerText;
+                    moviepeople.innerHTML = "성인 : " + btn_num2 + "명" + " " + "청소년 : " + btn_num1 + "명"
+                    moviedate.innerHTML = date.outerText;
+                    moviearea.innerHTML = name1.outerText;
+                    if (btn_num2 > 0)
+                        prize1.innerHTML = "성인     " + "11,000원 X " + btn_num2;
+                    if (btn_num1 > 0)
+                        prize2.innerHTML = "청소년     " + "9,000원 X " + btn_num1;
+                    total.innerHTML = total1 + "원";
+                }
+                 else if (image == 4) {
+                    moviename.innerHTML = moviename1[image - 1];
+                    tbimg.src = file_name4;
+                    movieseat.innerHTML = infor5.outerText;
+                    moviepeople.innerHTML = "성인 : " + btn_num2 + "명" + " " + "청소년 : " + btn_num1 + "명"
+                    moviedate.innerHTML = date.outerText;
+                    moviearea.innerHTML = name1.outerText;
+                    if (btn_num2 > 0)
+                        prize1.innerHTML = "성인     " + "11,000원 X " + btn_num2;
+                    if (btn_num1 > 0)
+                        prize2.innerHTML = "청소년     " + "9,000원 X " + btn_num1;
+                    total.innerHTML = total1 + "원";
+                }
+                  else if (image == 5) {
+                    moviename.innerHTML = moviename1[image - 1];
+                    tbimg.src = file_name5;
+                    movieseat.innerHTML = infor5.outerText;
+                    moviepeople.innerHTML = "성인 : " + btn_num2 + "명" + " " + "청소년 : " + btn_num1 + "명"
+                    moviedate.innerHTML = date.outerText;
+                    moviearea.innerHTML = name1.outerText;
+                    if (btn_num2 > 0)
+                        prize1.innerHTML = "성인     " + "11,000원 X " + btn_num2;
+                    if (btn_num1 > 0)
+                        prize2.innerHTML = "청소년     " + "9,000원 X " + btn_num1;
+                    total.innerHTML = total1 + "원";
+                }
+                if (area == 1) {
+                    n = parseInt(localStorage.getItem('t_total1')) + parseInt(total1);
+                    localStorage.removeItem('t_total1');
+                    localStorage.setItem('t_total1',n);
+                }
+                else if (area == 2) {
+                    n = parseInt(localStorage.getItem('t_total2')) + parseInt(total1);
+                    localStorage.removeItem('t_total2');
+                    localStorage.setItem('t_total2',n);
+                }
+                else if (area == 3) {
+                    n = parseInt(localStorage.getItem('t_total3')) +parseInt(total1);
+                    localStorage.removeItem('t_total3');
+                    localStorage.setItem('t_total3',n);
+                }
+                else if (area == 4) {
+                    n = parseInt(localStorage.getItem('t_total4')) + parseInt(total1);
+                    localStorage.removeItem('t_total4');
+                    localStorage.setItem('t_total4',n);
+                }
+                else if (area == 5) {
+                    n = parseInt(localStorage.getItem('t_total5')) + parseInt(total1);
+                    localStorage.removeItem('t_total5');
+                    localStorage.setItem('t_total5',n);
+                }
+                else if (area == 6) {
+                    n = parseInt(localStorage.getItem('t_total6')) + parseInt(total1);
+                    localStorage.removeItem('t_total6');
+                    localStorage.setItem('t_total6',n);
+                }
+                
+
+
+            }
+            else {
+                alert("인원수 맞게 좌석을 선택해주세요");
+            }
+        }
+
+        function a1(str) {
+            row1 = document.getElementsByName('row1');
+            row2 = document.getElementsByName('row2');
+            row3 = document.getElementsByName('row3');
+            row4 = document.getElementsByName('row4');
+            row5 = document.getElementsByName('row5');
+            row6 = document.getElementsByName('row6');
+            row7 = document.getElementsByName('row7');
+            row8 = document.getElementsByName('row8');
+            row9= document.getElementsByName('row9');
+            row10 = document.getElementsByName('row10');
+            row11 = document.getElementsByName('row11');
+            row12 = document.getElementsByName('row12');
+            count = document.getElementById('count');
+            
+            var value = localStorage.getItem(str);
+            var storedStorage = JSON.parse(value);
+            
+            for (i = 0; i < 7; i++) {
+                array1_1[i] = storedStorage[i];
+
+            }
+            var storedStorage = JSON.parse(value);
+            for (i = 7; i < 15; i++) {
+                array1_2[i-7] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 15; i < 23; i++) {
+                array1_3[i-15] = storedStorage[i];
+            }
+            var storedStorage = JSON.parse(value);
+            for (i = 23; i < 31; i++) {
+                array1_4[i-23] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 31; i < 39; i++) {
+                array1_5[i-31] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 39; i < 47; i++) {
+                array1_6[i-39] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 47; i < 55; i++) {
+                array1_7[i-47] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 55; i < 63; i++) {
+                array1_8[i-55] = storedStorage[i];
+            }
+            
+            var storedStorage = JSON.parse(value);
+            for (i = 63; i < 72; i++) {
+                array1_9[i-63] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 72; i < 81; i++) {
+                array1_10[i-72] = storedStorage[i];
+            }
+
+            var storedStorage = JSON.parse(value);
+            for (i = 81; i < 90; i++) {
+                array1_11[i-81] = storedStorage[i];
+            }
+            for (i = 90; i < 99; i++) {
+                array1_12[i-90] = storedStorage[i];
+            }
+
+            for (i = 0; i < array1_1.length; i++) {
+                if (array1_1[i] == 1) {
+                    row1[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row1[i].style.backgroundColor = 'dimgrey';
+               
+                
+            }
+
+            for (i = 0; i < array1_9.length; i++) {
+                if (array1_9[i] == 1) {
+                    row9[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row9[i].style.backgroundColor = 'dimgrey';
+
+                if (array1_10[i] == 1) {
+                    row10[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row10[i].style.backgroundColor = 'dimgrey';
+                if (array1_11[i] == 1) {
+                    row11[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row11[i].style.backgroundColor = 'dimgrey';
+                if (array1_12[i] == 1) {
+                    row12[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row12[i].style.backgroundColor = 'dimgrey';
+            }
+
+            for (i = 0; i < array1_2.length; i++) {
+                if (array1_2[i] == 1) {
+                    row2[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }else 
+                    row2[i].style.backgroundColor = 'dimgrey';
+                if (array1_3[i] == 1) {
+                    row3[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row3[i].style.backgroundColor = 'dimgrey';
+                if (array1_4[i] == 1) {
+                    row4[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row4[i].style.backgroundColor = 'dimgrey';
+                if (array1_5[i] == 1) {
+                    row5[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row5[i].style.backgroundColor = 'dimgrey';
+                if (array1_6[i] == 1) {
+                    row6[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row6[i].style.backgroundColor = 'dimgrey';
+                if (array1_7[i] == 1) {
+                    row7[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row7[i].style.backgroundColor = 'dimgrey';
+                if (array1_8[i] == 1) {
+                    row8[i].style.backgroundColor = 'lightgray';
+                    counted_people += 1;
+                }
+                else 
+                    row8[i].style.backgroundColor = 'dimgrey';
+            }
+            count.innerHTML = 99- counted_people;
+            
+            
+        }
+        function clc2() {
+            chk_num = 0;
+            td10_2 = document.getElementById('td10_2');
+            counted_people = 0;
+            if (place == "가양") {  
+                if (td10_2.outerText != "") {
+                    a1('SEOUL2');
+                } 
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "수원") {   
+                if (td10_2.outerText != "") {
+                    
+                    a1('GIDO2');
+                } 
+                else {
+                    chk_num = -1;
+                }
+                
+            }
+            else if (place == "서산") { 
+                if (td10_2.outerText != "") {
+                    a1('CHEONG2');
+                }  
+                else {
+                    chk_num = -1;
+                }
+                
+            }
+            else if (place == "군산") {               
+                 if (td10_2.outerText != "") {
+                    a1('LADO2');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "대구") {               
+                 if (td10_2.outerText != "") {
+                    a1('SANG2');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "6_2") {               
+                 if (td10_2.outerText != "") {
+                    a1('WON2');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+        }
+        function clc3() {
+            chk_num = 0;
+            td10_3 = document.getElementById('td10_3');
+            counted_people = 0;
+            if (place == "건대입구") {               
+                 if (td10_3.outerText != "") {
+                    a1('SEOUL3');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "천안") {               
+                 if (td10_3.outerText != "") {
+                    a1('GIDO3');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "청주") {               
+                 if (td10_3.outerText != "") {
+                    a1('CHEONG3');
+                } 
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "전주") {               
+                 if (td10_3.outerText != "") {
+                    a1('LADO3');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "부산") {               
+                 if (td10_3.outerText != "") {
+                    a1('SANG3');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "6_3") {               
+                 if (td10_3.outerText != "") {
+                    a1('WON3');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+        }
+        function clc4() {
+            chk_num = 0;
+            td10_4 = document.getElementById('td10_4');
+            counted_people = 0;
+            if (place == "강동") {
+                 if (td10_4.outerText != "") {
+                    a1('SEOUL4');
+                }    
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "안산") {               
+                 if (td10_4.outerText != "") {
+                    a1('GIDO4');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "경주") {               
+                 if (td10_4.outerText != "") {
+                    a1('SANG4');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "3_4") {               
+                 if (td10_4.outerText != "") {
+                    a1('CHEONG4');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "4_4") {               
+                 if (td10_4.outerText != "") {
+                    a1('LADO4');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "6_4") {               
+                 if (td10_4.outerText != "") {
+                    a1('WON4');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+        }
+        function clc5() {
+            chk_num = 0;
+            td10_5 = document.getElementById('td10_5');
+            counted_people = 0;
+            if (place == "김포공항") {
+                 if (td10_5.outerText != "") {
+                    a1('SEOUL5');
+                }    
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "2_5") {
+                 if (td10_5.outerText != "") {
+                    a1('GIDO5');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "3_5") {
+                 if (td10_5.outerText != "") {
+                    a1('CHEONG5');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "4_5") {
+                 if (td10_5.outerText != "") {
+                    a1('LADO5');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "5_5") {
+                 if (td10_5.outerText != "") {
+                    a1('SANG5');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "6_6") {
+                 if (td10_5.outerText != "") {
+                    a1('WON5');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+        }
+        function clc6() {
+            chk_num = 0;
+            td10_6 = document.getElementById('td10_6');
+            counted_people = 0;
+            if (place == "신도림") {
+                if (td10_6.outerText != "") {
+                    a1('SEOUL6');
+                }    
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "2_6") {
+                if (td10_6.outerText != "") {
+                    a1('GIDO6');
+                }    
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "3_6") {
+                if (td10_6.outerText != "") {
+                    a1('CHEONG6');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "4_6") {
+                if (td10_6.outerText != "") {
+                    a1('LADO6');
+                }    
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "5_6") {
+                if (td10_6.outerText != "") {
+                    a1('SANG6');
+                }    
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "6_6") {
+                if (td10_6.outerText != "") {
+                    a1('WON6');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+        }
+
+
+        function clc() {
+            counted_people = 0;
+            chk_num = 0;
+            row1 = document.getElementsByName('row1');
+            row2 = document.getElementsByName('row2');
+            row3 = document.getElementsByName('row3');
+            row4 = document.getElementsByName('row4');
+            row5 = document.getElementsByName('row5');
+            row6 = document.getElementsByName('row6');
+            row7 = document.getElementsByName('row7');
+            row8 = document.getElementsByName('row8');
+            row9= document.getElementsByName('row9');
+            row10 = document.getElementsByName('row10');
+            row11 = document.getElementsByName('row11');
+            row12 = document.getElementsByName('row12');
+            count = document.getElementById('count');
+            td10_1 = document.getElementById('td10_1');
+            td10_2 = document.getElementById('td10_2');
+            td10_3 = document.getElementById('td10_3');
+            td10_4 = document.getElementById('td10_4');
+            td10_5 = document.getElementById('td10_5');
+            td10_6 = document.getElementById('td10_6');
+            
+            if (place == "가산디지털") {
+                
+                if (td10_1.outerText != "") {
+                    a1('SEOUL1');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "안양") {
+                if (td10_1.outerText != "") {
+                    a1('GIDO1');
+                }   
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "대전") {
+                if (td10_1.outerText != "") {
+                    a1('CHEONG1');
+                } 
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "광주") {
+               if (td10_1.outerText != "") {
+                    a1('LADO1');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "경산") {
+                if (td10_1.outerText != "") {
+                    a1('SANG1');
+                }  
+                else {
+                    chk_num = -1;
+                }
+            }
+            else if (place == "춘천") {
+                if (td10_1.outerText != "") {
+                    a1('WON1');
+                }
+                else {
+                    chk_num = -1;
+                }
+                
+            }   
+            
+        }
+
+        function img_show() {
+            file_name1 = localStorage.getItem('file1_name1');
+                file_name2 = localStorage.getItem('file1_name2');
+                file_name3 = localStorage.getItem('file1_name3');
+                file_name4 = localStorage.getItem('file1_name4');
+                file_name5 = localStorage.getItem('file1_name5');
+                file_name6 = localStorage.getItem('file1_name6');
+            
+            array_movie0 = new Array();
+            storedStorage30 = new Array();
+            array_movie0 = localStorage.getItem('mov_array');
+            storedStorage30 = JSON.parse(array_movie0);
+
+            img = document.getElementById('movie');
+            infor = document.getElementById('infor');
+            infor1 = document.getElementById('infor1');
+            infor2 = document.getElementById('infor2');
+            infor3 = document.getElementById('infor3');
+            infor4=document.getElementById('infor4');
+            value = localStorage.getItem("image");
+                
+            switch (value) {
+                case '1':
+                    {
+                        img.src = file_name1;
+                        infor.innerHTML = storedStorage30[0];
+                        infor1.innerHTML = "전체 관람가";
+                        infor2.innerHTML = "2D";
+                        infor3.innerHTML = "103분";
+                        infor4.innerHTML = "드라마";
+
+                        break;
+                    }
+                case '2':
+                    {
+                        img.src =  file_name2;
+                        infor.innerHTML = storedStorage30[1];
+                        infor1.innerHTML = "15세 관람가";
+                        infor2.innerHTML = "2D";
+                        infor3.innerHTML = "129분";
+                        infor4.innerHTML = "드라마";
+                        break;
+                    }
+                case '3':
+                    {
+                        img.src =  file_name3;
+
+                        infor.innerHTML = storedStorage30[2];
+                        infor1.innerHTML = "15세 관람가";
+                        infor2.innerHTML = "2D";
+                        infor3.innerHTML = "118분";
+                        infor4.innerHTML = "액션/스릴러";
+                        break;
+                    }
+                case '4':
+                    {
+                        img.src =  file_name4;
+
+                        infor.innerHTML = storedStorage30[3];
+                        infor1.innerHTML = "15세 관람가";
+                        infor2.innerHTML = "2D";
+                        infor3.innerHTML = "109분";
+                        infor4.innerHTML = "액션";
+                        break;
+                    }
+                case '5':
+                    {
+                        img.src =  file_name5;
+                        infor.innerHTML = storedStorage30[4];
+                        infor1.innerHTML = "12세 관람가";
+                        infor2.innerHTML = "2D";
+                        infor3.innerHTML = "126분";
+                        infor4.innerHTML = "드라마";
+                        break;
+                    }
+            }
+        }
+        function date_show() {
+
+        }
+        function btn1(n, val) {
+            
+            if (areanum == 0) {
+                alert("시간을 먼저 선택해주세요");
+            }
+            else {
+                clickcount = 1;
+                a2 = document.getElementsByClassName('btn1');
+                total_people -= btn_num1;
+                btn_num1 = n;
+                total_people += btn_num1;
+                if (total_people > 8) {
+                    alert("최대 예매 가능한 인원수는 8명 까지 입니다.");
+
+
+                }
+                else {
+                    for (i = 0; i < a2.length; i++) {
+                        a2[i].style.backgroundColor = "floralwhite";
+                        a2[i].style.color = 'black';
+                    }
+
+                    for (i = 0; i < a2.length; i++) {
+
+                        a2[i].innerHTML = i + 1;
+
+                    }
+
+                    val.style.backgroundColor = 'black';
+                    val.style.color = 'white';
+                }
+            }
+           
+        }
+        function check() {
+            row1 = document.getElementsByName('row1');
+
+            for (i = 0; i < array1_1.length; i++) {
+                if (array1_1[i] == 1) {
+                    row1[i].style.backgroundColor = 'dimgrey';
+                }
+            }
+        }
+
+        function btn(n, val) {
+            a2 = document.getElementsByClassName('btn');  
+            if (areanum == 0) {
+                alert("시간을 먼저 선택해주세요");
+            }
+            else {
+                total_people -= btn_num2;
+                btn_num2 = n;
+                total_people += btn_num2;
+                if (total_people > 8) {
+                    alert("최대 예매 가능한 인원수는 8명 까지 입니다.");
+
+
+                }
+                else {
+                    for (i = 0; i < a2.length; i++) {
+                        a2[i].style.backgroundColor = "floralwhite";
+                        a2[i].style.color = 'black';
+                    }
+
+                    for (i = 0; i < a2.length; i++) {
+
+                        a2[i].innerHTML = i + 1;
+
+                    }
+
+                    val.style.backgroundColor = 'black';
+                    val.style.color = 'white';
+                }
+            }
+            
+        }
+
+        function add_seat(n1, n2, val) {
+            
+            row1 = document.getElementsByName('row1');
+            name2 = document.getElementById('name2');
+            infor7 = document.getElementById('infor7');
+            if (chk_num == -1) {
+                alert("빈 영화관을 선택하셨습니다.");
+            }
+            else {
+                if (areanum == 0) {
+                    alert("시간을 먼저 선택해주세요");
+                }
+                else {
+
+                    if (total_people == 0) {
+                        alert("먼저 인원을 선택해주세요");
+                    }
+                    else {
+                        if (total_people >= count_n) {
+                            if (val.style.backgroundColor == 'dimgrey' || val.style.backgroundColor == '' || val.style.backgroundColor == 'lightgray') {
+
+                                if (n1 == 1) {
+                                    if (array1_1[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_1[n2] = 1;
+                                        result[abs_count] = seat[n1 - 1] + seat_A[n2] + " ";
+                                        count_n++;
+                                        val.style.backgroundColor = "red";
+                                        abs_count++;
+
+
+                                    }
+
+                                }
+                                if (n1 == 2) {
+                                    if (array1_2[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_2[n2] = 1;
+                                        result[abs_count] = seat[n1 - 1] + seat_B_even[n2] + " ";
+                                        val.style.backgroundColor = "red";
+                                        abs_count++;
+
+                                        count_n++;
+                                    }
+                                }
+                                if (n1 == 3) {
+                                    if (array1_3[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_3[n2] = 1;
+                                        result[abs_count] = seat[n1 - 1] + seat_B_odd[n2] + " ";
+                                        val.style.backgroundColor = "red";
+                                        count_n++;
+                                        abs_count++;
+
+
+                                    }
+                                }
+                                if (n1 == 4) {
+                                    if (array1_4[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_4[n2] = 1;
+                                        result[abs_count] = seat[n1 - 1] + seat_B_even[n2] + " ";
+                                        val.style.backgroundColor = "red";
+                                        abs_count++;
+                                        count_n++;
+                                    }
+                                }
+                                if (n1 == 5) {
+                                    if (array1_5[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_5[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_B_odd[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 6) {
+                                    if (array1_6[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_6[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_B_even[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 7) {
+                                    if (array1_7[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_7[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_B_odd[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 8) {
+                                    if (array1_8[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_8[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_B_even[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 9) {
+                                    if (array1_9[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_9[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_C_odd[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 10) {
+                                    if (array1_10[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_10[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_C_even[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 11) {
+                                    if (array1_11[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_11[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_C_odd[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+                                if (n1 == 12) {
+                                    if (array1_12[n2] == 1) {
+                                        alert("이미 예약된 자리입니다.");
+                                    }
+                                    else {
+                                        array1_12[n2] = 1;
+                                        val.style.backgroundColor = "red";
+                                        result[abs_count] = seat[n1 - 1] + seat_C_even[n2] + " ";
+                                        count_n++;
+                                        abs_count++;
+                                    }
+                                }
+
+                            }
+                            else {
+
+                                count_n -= 1;
+                                val.style.backgroundColor = "dimgrey";
+                                clickcount = 0;
+                                if (n1 == 1) {
+                                    array1_1[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_A[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+
+                                }
+                                if (n1 == 2) {
+                                    array1_2[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 3) {
+                                    array1_3[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 4) {
+                                    array1_4[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 5) {
+                                    array1_5[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 6) {
+                                    array1_6[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 7) {
+                                    array1_7[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 8) {
+                                    array1_8[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 9) {
+                                    array1_9[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 10) {
+                                    array1_10[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 11) {
+                                    array1_11[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 12) {
+                                    array1_12[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                            }
+
+
+                        }
+                        else {
+                            if (val.style.backgroundColor == "red") {
+                                val.style.backgroundColor = "dimgrey";
+                                count_n -= 1;
+                                val.style.backgroundColor = "dimgrey";
+
+                                if (n1 == 1) {
+                                    array1_1[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_A[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+
+                                }
+                                if (n1 == 2) {
+                                    array1_2[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 3) {
+                                    array1_3[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 4) {
+                                    array1_4[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 5) {
+                                    array1_5[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 6) {
+                                    array1_6[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 7) {
+                                    array1_7[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 8) {
+                                    array1_8[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_B_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 9) {
+                                    array1_9[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 10) {
+                                    array1_10[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 11) {
+                                    array1_11[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_odd[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+                                if (n1 == 12) {
+                                    array1_12[n2] = 0;
+                                    n = String(seat[n1 - 1] + seat_C_even[n2] + " ");
+                                    result[result.indexOf(n)] = " ";
+                                }
+
+                            }
+                            else {
+                                alert("이미 좌석을 선택하셨습니다.");
+                            }
+                        }
+                    }
+
+                }
+            }
+            infor7.innerHTML = result.join(' ');
+
+            
+        }
+
+        function dia_close() {
+            var a = document.getElementById('finish');      
+            a.close();
+        }
+        function start() {
+            area_name = document.getElementById('area_name');
+            row1 = document.getElementsByName('row1');
+           
+            day = new Array();
+            day[0] = document.getElementById('day1');
+            day[1] = document.getElementById('day2');
+            day[2] = document.getElementById('day3');
+            day[3] = document.getElementById('day4');
+            day[4] = document.getElementById('day5');
+            day[5] = document.getElementById('day6');
+            var p = document.getElementById('name');
+            var p1 = document.getElementById('name2');
+            
+            day[6] = 0;
+            date = new Date();
+            week = new Array('일', '월', '화', '수', '목', '금', '토');
+            today = date.getDay();
+            area_name.innerHTML = localStorage.getItem('ci_area');
+            p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() +"("+week[today]+")";
+            for (i = 0; i < 6; i++) {
+                if (week[today] == '일') {
+                    day[i].style.color = "red";
+                    day[i].innerHTML = " "+ week[today] + " " + (date.getDate() + i) + "일";
+                }
+                else if (week[today] == '토') {
+                    day[i].style.color = "blue";
+                    day[i].innerHTML = " "+ week[today] + " " + (date.getDate() + i) + "일";
+                }
+               else {
+                    
+                    day[i].innerHTML = " "+ week[today] + " " + (date.getDate() + i) + "일";
+                }
+
+                day[i].innerHTML = " " + week[today] + " " + (date.getDate() + i) + "일";
+                today1[i] = week[today];
+                if (today == 6) {
+                    today = -1;
+                }
+                today = today + 1;
+                
+
+            }
+            array_movie0 = new Array();
+            storedStorage30 = new Array();
+            array_movie0 = localStorage.getItem('mov_array');
+            storedStorage30 = JSON.parse(array_movie0);
+
+            image = localStorage.getItem('image');
+            if (image == 1) {
+                p1.innerHTML = storedStorage30[0]
+                localStorage.setItem('movie_name', storedStorage30[0]);
+            }
+            else if (image == 2) {
+                p1.innerHTML = storedStorage30[1]
+                localStorage.setItem('movie_name', storedStorage30[1]);
+            }
+            else if (image == 3) {
+                p1.innerHTML = storedStorage30[2]
+                localStorage.setItem('movie_name', storedStorage30[2]);
+            }
+            else if (image == 4) {
+                p1.innerHTML = storedStorage30[3]
+                localStorage.setItem('movie_name', storedStorage30[3]);
+            }
+            else if (image == 5) {
+                p1.innerHTML = storedStorage30[4]
+                localStorage.setItem('movie_name', storedStorage30[4]);
+            }
+
+            check()
+            onc1(1);
+            
+            date_show();
+            img_show();
+
+            
+        }
+        
+        function all_delete1() {
+            var m1 = document.getElementById('td10');
+            var m2 = document.getElementById('td20');
+            var m3 = document.getElementById('td30');
+            var m4 = document.getElementById('td40');
+            var m5 = document.getElementById('td50');
+            var m6 = document.getElementById('td60');
+
+            m1.innerHTML = "";
+            m2.innerHTML = "";
+            m3.innerHTML = "";
+            m4.innerHTML = "";
+            m5.innerHTML = "";
+            m6.innerHTML = "";
+
+
+        }
+
+        function onc3(num2) {
+            
+            areanum = 1;
+            movie_name = localStorage.getItem('movie_name');
+            var date = document.getElementById('date');           
+            var m1 = document.getElementById("td10");
+            var m2 = document.getElementById('td20');
+            var m3 = document.getElementById('td30');
+            var m4 = document.getElementById('td40');
+            var m5 = document.getElementById('td50');
+            var m6 = document.getElementById('td60');
+            var p = document.getElementById('name2');
+            var ci_name = document.getElementById('cinema_name');
+            area_name = localStorage.getItem('ci_area');
+            all_delete1();
+           
+            
+            if (area == 1 && num2 == 1) {  
+                
+                m1.innerHTML = "✔";
+                m1.style.color = 'red';
+                m1.style.fontSize = 'x-large';
+                place = "가산디지털";
+                p.innerHTML = movie_name;
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_1[num2-1];
+                clc();
+            }
+            else if (area == 1 && num2 == 2) {
+                m2.innerHTML = "✔";
+                m2.style.color = 'red';
+                m2.style.fontSize = 'x-large';
+                place = "가양";
+                p.innerHTML = movie_name;
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_1[num2-1];
+                clc2();
+            }
+            else if (area == 1 && num2 == 3) {
+
+                m3.innerHTML = "✔";
+                m3.style.color = 'red';
+                m3.style.fontSize = 'x-large';
+                place = "건대입구";
+                p.innerHTML = movie_name;
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_1[num2-1];
+                clc3();
+            }
+            else if (area == 1 && num2 == 4) {
+
+                m4.innerHTML = "✔";
+                m4.style.color = 'red';
+                m4.style.fontSize = 'x-large';
+                place="강동"
+                p.innerHTML = movie_name;
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_1[num2-1];
+                clc4();
+            }
+            else if (area == 1 && num2 == 5) {
+                m5.innerHTML = "✔";
+                m5.style.color = 'red';
+                m5.style.fontSize = 'x-large';
+                place="김포공항"
+                p.innerHTML = movie_name;
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_1[num2-1];
+                clc5();
+            }
+            else if (area == 1 && num2 == 6) {
+                m6.innerHTML = "✔";
+                m6.style.color = 'red';
+                m6.style.fontSize = 'x-large';
+                place="신도림"
+                p.innerHTML = movie_name;
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_1[num2-1];
+                clc6();
+            }
+
+            /*2번째 줄 */
+            else if (area == 2 && num2 == 1) {
+                m1.innerHTML = "✔";
+                m1.style.color = 'red';
+                m1.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "안양";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_2[num2-1];
+                clc();
+            }
+            else if (area == 2 && num2 == 2) {
+                m2.innerHTML = "✔";
+                m2.style.color = 'red';
+                m2.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "수원";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_2[num2-1];
+                clc2();
+            }
+            else if (area == 2 && num2 == 3) {
+                m3.innerHTML = "✔";
+                m3.style.color = 'red';
+                m3.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "천안";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_2[num2-1];
+                clc3();
+            }
+            else if (area == 2 && num2 == 4) {
+                m4.innerHTML = "✔";
+                m4.style.color = 'red';
+                m4.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "안산";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_2[num2-1];
+                clc4();
+            }
+            else if (area == 2 && num2 == 5) {
+                m5.innerHTML = "✔";
+                m5.style.color = 'red';
+                m5.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "2_5";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_2[num2-1];
+                clc5();
+            }
+            else if (area == 2 && num2 == 6) {
+                m6.innerHTML = "✔";
+                m6.style.color = 'red';
+                m6.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "2_6";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_2[num2-1];
+                clc6();
+            }
+
+        /*3번째 줄*/
+            else if (area == 3 && num2 == 1) {
+                m1.innerHTML = "✔";
+                m1.style.color = 'red';
+                m1.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "대전";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_3[num2-1];
+                clc();
+            }
+            else if (area == 3 && num2 == 2) {
+                m2.innerHTML = "✔";
+                m2.style.color = 'red';
+                m2.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "서산";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_3[num2-1];
+                clc2();
+            }
+            else if (area == 3 && num2 == 3) {
+                m3.innerHTML = "✔";
+                m3.style.color = 'red';
+                m3.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "청주";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_3[num2-1];
+                clc3();
+            }
+             else if (area == 3 && num2 == 4) {
+                m4.innerHTML = "✔";
+                m4.style.color = 'red';
+                m4.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "3_4";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_3[num2-1];
+                clc4();
+            }
+             else if (area == 3 && num2 == 5) {
+                m5.innerHTML = "✔";
+                m5.style.color = 'red';
+                m5.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "3_5";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_3[num2-1];
+                clc5();
+            }
+             else if (area == 3 && num2 == 6) {
+                m6.innerHTML = "✔";
+                m6.style.color = 'red';
+                m6.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "3_6";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_3[num2-1];
+                clc6();
+            }
+
+        /*4번째 줄*/
+             else if (area == 4 && num2 == 1) {
+                m1.innerHTML = "✔";
+                m1.style.color = 'red';
+                m1.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "광주";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_4[num2-1];
+                clc();
+            }
+             else if (area == 4 && num2 == 2) {
+                m2.innerHTML = "✔";
+                m2.style.color = 'red';
+                m2.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "군산";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_4[num2-1];
+                clc2();
+            }
+             else if (area == 4 && num2 == 3) {
+                m3.innerHTML = "✔";
+                m3.style.color = 'red';
+                m3.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "전주";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_4[num2-1];
+                clc3();
+            }
+             else if (area == 4 && num2 == 4) {
+                m4.innerHTML = "✔";
+                m4.style.color = 'red';
+                m4.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "4_4";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_4[num2-1];
+                clc4();
+            }
+             else if (area == 4 && num2 == 5) {
+                m5.innerHTML = "✔";
+                m5.style.color = 'red';
+                m5.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "4_5";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_4[num2-1];
+                clc5();
+            }
+             else if (area == 4 && num2 == 6) {
+                m6.innerHTML = "✔";
+                m6.style.color = 'red';
+                m6.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "4_6";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_4[num2-1];
+                clc6();
+            }
+
+              /*5번째 줄*/
+             else if (area == 5 && num2 == 1) {
+                m1.innerHTML = "✔";
+                m1.style.color = 'red';
+                m1.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "경산";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_5[num2-1];
+                clc();
+            }
+             else if (area == 5 && num2 == 2) {
+                m2.innerHTML = "✔";
+                m2.style.color = 'red';
+                m2.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "대구";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_5[num2-1];
+                clc2();
+            }
+            else if (area == 5 && num2 == 3) {
+                m3.innerHTML = "✔";
+                m3.style.color = 'red';
+                m3.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "부산";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_5[num2-1];
+                clc3();
+            }
+            else if (area == 5 && num2 == 4) {
+                m4.innerHTML = "✔";
+                m4.style.color = 'red';
+                m4.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "경주";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_5[num2-1];
+                clc4();
+            }
+            else if (area == 5 && num2 == 5) {
+                m5.innerHTML = "✔";
+                m5.style.color = 'red';
+                m5.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "5_5";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_5[num2-1];
+                clc5();
+            }
+            else if (area == 5 && num2 == 6) {
+                m6.innerHTML = "✔";
+                m6.style.color = 'red';
+                m6.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "5_6";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_5[num2-1];
+                clc6();
+            }
+
+        /*6번쨰 줄*/
+            else if (area == 6 && num2 == 1) {
+                m1.innerHTML = "✔";
+                m1.style.color = 'red';
+                m1.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "춘천";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_6[num2-1];
+                clc();
+            }
+             else if (area == 6 && num2 == 2) {
+                m2.innerHTML = "✔";
+                m2.style.color = 'red';
+                m2.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "6_2";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_6[num2-1];
+                clc2();
+            }
+             else if (area == 6 && num2 == 3) {
+                m3.innerHTML = "✔";
+                m3.style.color = 'red';
+                m3.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "6_3";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_6[num2-1];
+                clc3();
+            }
+             else if (area == 6 && num2 == 4) {
+                m4.innerHTML = "✔";
+                m4.style.color = 'red';
+                m4.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "6_4";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_6[num2-1];
+                clc4();
+            }
+             else if (area == 6 && num2 == 5) {
+                m5.innerHTML = "✔";
+                m5.style.color = 'red';
+                m5.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "6_5";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_6[num2-1];
+                clc5();
+            }
+             else if (area == 6 && num2 == 6) {
+                m6.innerHTML = "✔";
+                m6.style.color = 'red';
+                m6.style.fontSize = 'x-large';
+                p.innerHTML = movie_name;
+                place = "6_6";
+                ci_name.innerHTML = area_name;
+                date.innerHTML = onc1_1(area) +" " +array2_6[num2-1];
+                clc6();
+            }
+        }
+
+        function c_clear() {
+            var c1 = document.getElementById('td10_1');
+            var c2 = document.getElementById('td10_2');
+            var c3 = document.getElementById('td10_3');
+            var c4 = document.getElementById('td10_4');
+            var c5 = document.getElementById('td10_5');
+            var c6 = document.getElementById('td10_6');
+
+
+            c1.innerHTML = "";
+            c2.innerHTML = "";
+            c3.innerHTML = "";
+            c4.innerHTML = "";
+            c5.innerHTML = "";
+            c6.innerHTML = "";
+
+            
+
+        }
+
+        function all_delete() {
+          
+            var n1 = document.getElementById('tr1');
+            var n2 = document.getElementById('tr2');
+            var n3 = document.getElementById('tr3');
+            var n4 = document.getElementById('tr4');
+            var n5 = document.getElementById('tr5');
+            var n6 = document.getElementById('tr6');
+            var m1 = document.getElementById('td1');
+            var m2 = document.getElementById('td2');
+            var m3 = document.getElementById('td3');
+            var m4 = document.getElementById('td4');
+            var m5 = document.getElementById('td5');
+            var m6 = document.getElementById('td6');
+            var p = document.getElementById('name');
+
+            m1.innerHTML = "";
+            m2.innerHTML = "";
+            m3.innerHTML = "";
+            m4.innerHTML = "";
+            m5.innerHTML = "";
+            m6.innerHTML = "";
+
+            n1.style.backgroundColor = 'floralwhite';
+            n2.style.backgroundColor = 'floralwhite';
+            n3.style.backgroundColor = 'floralwhite';
+            n4.style.backgroundColor = 'floralwhite';
+            n5.style.backgroundColor = 'floralwhite';
+            n6.style.backgroundColor = 'floralwhite';
+
+
+        }
+
+        function onc2(num1) {
+            var n1 = document.getElementById('tr10');
+            var n2 = document.getElementById('tr20');
+            var n3 = document.getElementById('tr30');
+            var n4 = document.getElementById('tr40');
+            var n5 = document.getElementById('tr50');
+            var n6 = document.getElementById('tr60');
+            var m1 = document.getElementById('td10');
+            var m2 = document.getElementById('td20');
+            var m3 = document.getElementById('td30');
+            var m4 = document.getElementById('td40');
+            var m5 = document.getElementById('td50');
+            var m6 = document.getElementById('td60');
+            var c1 = document.getElementById('td10_1');
+            var c2 = document.getElementById('td10_2');
+            var c3 = document.getElementById('td10_3');
+            var c4 = document.getElementById('td10_4');
+            var c5 = document.getElementById('td10_5');
+            var c6 = document.getElementById('td10_6');
+            var pp = document.getElementsByClassName('td3');
+            var p = document.getElementById('name');
+            var array2_1 = new Array();
+            var array2_2 = new Array();
+            var array2_3 = new Array();
+            var array2_4 = new Array();
+            var array2_5 = new Array();
+            var array2_6 = new Array();
+
+
+                value = localStorage.getItem('today1_movie1');               
+                storedStorage = JSON.parse(value);                
+                for (i = 0; i < 6; i++) {
+                    array2_1[i] = storedStorage[i];
+                }
+           
+     
+                value = localStorage.getItem('today2_movie1');             
+                storedStorage = JSON.parse(value);                
+                for (i = 0; i < 6; i++) {
+                    array2_2[i] = storedStorage[i];
+                    
+                }
+
+
+                value = localStorage.getItem('today3_movie1');              
+                storedStorage = JSON.parse(value);                
+                for (i = 0; i < 6; i++) {
+                    array2_3[i] = storedStorage[i];
+                    
+                }
+
+
+                value = localStorage.getItem('today4_movie1');
+                storedStorage = JSON.parse(value); 
+                for (i = 0; i < 6; i++) {
+                    array2_4[i] = storedStorage[i];
+                }
+            
+
+
+                value = localStorage.getItem('today5_movie1');                
+                storedStorage = JSON.parse(value);
+                for (i = 0; i < 6; i++) {
+                    array2_5[i] = storedStorage[i];
+            }
+
+            value = localStorage.getItem('today6_movie1');                
+                storedStorage = JSON.parse(value);
+                for (i = 0; i < 6; i++) {
+                    array2_6[i] = storedStorage[i];
+                }
+
+            num2 = num1;
+            
+            image = localStorage.getItem('image');
+            num = 1;
+            mov_array = localStorage.getItem('mov_array');
+            storedStorage4 = JSON.parse(mov_array);
+            array_name1 = localStorage.getItem('array_name');
+            td0 = document.getElementById('td0');
+            storedStorage3 = JSON.parse(array_name1);
+            
+            if (storedStorage3[num1 - 1] == 0) {
+                num1 = 0;
+            }
+            td0.innerHTML = "";
+            switch (num1) {
+                case 0:
+                    {
+                        
+                        td0.innerHTML = storedStorage4[num2- 1] + " 상영 날입니다.";
+                        c_clear();
+                        
+                        
+                      break;
+
+                    }
+                case 1:
+                    {
+                        c_clear();
+                        for (i = 0; i < 6; i++) {
+                            if (array2_1[i] == 'X') {
+                                break;
+                            }
+                            else {
+                                pp[i].innerHTML =  '<input type=button value="'+array2_1[i]+'  '+'본관'+'" style="opacity:1.0; color:black; width:120px;height:40px;cursor:pointer;font-size:large;font-weight:900" > <br />';
+                            }
+
+                        }                     
+                      break;
+
+                    }
+                case 2:
+                    {
+                        c_clear();
+                         for (i = 0; i < 6; i++) {
+                            if (array2_2[i] == 'X') {
+                                break;
+                            }
+                            else {
+                                pp[i].innerHTML =  '<input type=button value="'+array2_2[i]+'  '+'본관'+'" style="opacity:1.0; color:black; width:120px;height:40px;cursor:pointer;font-size:large;font-weight:900" ><br />';
+                            }
+
+                        }
+
+                        break;
+                    }
+                case 3:
+                    {
+                        c_clear();
+                        for (i = 0; i < 6; i++) {
+                            if (array2_3[i] == 'X') {
+                                break;
+                            }
+                            else {
+                                pp[i].innerHTML =  '<input type=button value="'+array2_3[i]+'  '+'본관'+'" style="opacity:1.0; color:black; width:120px;height:40px;cursor:pointer;font-size:large;font-weight:900" > <br />';
+                            }
+
+                        }
+                        
+                        break;
+                    }
+                case 4:
+                    {
+                        c_clear();
+                        for (i = 0; i < 6; i++) {
+                            if (array2_4[i] == 'X') {
+                                break;
+                            }
+                            else {
+                                pp[i].innerHTML =  '<input type=button value="'+array2_4[i]+'  '+'본관'+'" style="opacity:1.0; color:black; width:120px;height:40px;cursor:pointer;font-size:large;font-weight:900" > <br />';
+                            }
+
+                        }
+                        break;
+                    }
+                case 5:
+                    {
+                       c_clear();
+                        for (i = 0; i < 6; i++) {
+                            if (array2_5[i] == 'X') {
+                                break;
+                            }
+                            else {
+                                pp[i].innerHTML =  '<input type=button value="'+array2_5[i]+'  '+'본관'+'" style="opacity:1.0; color:black; width:120px;height:40px;cursor:pointer;font-size:large;font-weight:900"> <br />';
+                            }
+
+                        }
+                        break; 
+                    }
+                case 6:
+                    {
+                        c_clear();
+                        for (i = 0; i < 6; i++) {
+                            if (array2_6[i] == 'X') {
+                                break;
+                            }
+                            else {
+                                pp[i].innerHTML =  '<input type=button value="'+array2_6[i]+'  '+'본관'+'" style="opacity:1.0; color:black; width:120px;height:40px;cursor:pointer;font-size:large;font-weight:900"> <br />';
+                            }
+
+                        }
+
+                        break;
+                    }
+                
+            }
+
+        }
+        function onc1_1(num) {
+            var date = new Date();
+            today = date.getDay();
+            switch (num) {
+                case 1:
+                    {
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "(" + today1[0] + ")";
+                        break;
+                    }
+                case 2:
+                    {
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 1) + "(" + today1[1] + ")";
+                        break;
+                    }
+                case 3:
+                    {
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 2) + "(" + today1[2] + ")";
+                        break;
+                    }
+                case 4:
+                    {
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 3) + "(" + today1[3] + ")";
+                        break;
+                    }
+                case 5:
+                    {
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 4) + "(" + today1[4] + ")";
+                        break;
+                    }
+                case 6:
+                    {
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 5) + "(" + today1[5] + ")";
+                        break;
+                    }
+            }
+        }
+
+        function onc1(num) {
+            var n1 = document.getElementById('tr1');
+            var n2 = document.getElementById('tr2');
+            var n3 = document.getElementById('tr3');
+            var n4 = document.getElementById('tr4');
+            var n5 = document.getElementById('tr5');
+            var n6 = document.getElementById('tr6');
+            var m1 = document.getElementById('td1');
+            var m2 = document.getElementById('td2');
+            var m3 = document.getElementById('td3');
+            var m4 = document.getElementById('td4');
+            var m5 = document.getElementById('td5');
+            var m6 = document.getElementById('td6');
+            var m7 = document.getElementById('td7');
+            var date = new Date();
+            var p = document.getElementById('name');
+            all_delete1();
+
+            all_delete();
+            date = new Date();
+            week = new Array('일', '월', '화', '수', '목', '금', '토');
+            today = date.getDay();
+            switch (num) {
+                case 1:
+                    { 
+                    area = 1;                  
+                    p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() +"("+today1[0]+")";
+                    m1.innerHTML = "✔";
+                    m1.style.color = 'red';
+                    m1.style.fontSize = 'x-large';
+                    n1.style.backgroundColor = 'white';
+                        onc2(1);
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() +"("+today1[0]+")";
+                    break;
+                    }
+                case 2:
+                    {
+                    area = 2;
+                    p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+1) +"("+today1[1]+")";
+                    m2.innerHTML = "✔";
+                    m2.style.color = 'red';
+                    m2.style.fontSize = 'x-large';
+                    n2.style.backgroundColor = 'white';
+                        onc2(2);
+                        return  date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+1) +"("+today1[1]+")";
+                    break;
+                    }
+                case 3:
+                    {
+                    area = 3;
+                    p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+2) +"("+today1[2]+")";
+                    m3.innerHTML = "✔";
+                    m3.style.color = 'red';
+                    m3.style.fontSize = 'x-large';
+                    n3.style.backgroundColor = 'white';
+                        onc2(3);
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 2) + "(" + today1[2] + ")";
+                    break;
+                    }
+                case 4:
+                    {
+                    area = 4;
+                    p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+3) +"("+today1[3]+")";
+                    m4.innerHTML = "✔";
+                    m4.style.color = 'red';
+                    m4.style.fontSize = 'x-large';
+                    n4.style.backgroundColor = 'white';
+                        onc2(4);
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+3) +"("+today1[3]+")";
+                    break;
+                    }
+                case 5:
+                    {
+                    area=5;
+                    p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+4) +"("+today1[4]+")";
+                    m5.innerHTML = "✔";
+                    m5.style.color = 'red';
+                    m5.style.fontSize = 'x-large';
+                    n5.style.backgroundColor = 'white';
+                        onc2(5);
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+4) +"("+today1[4]+")";
+                    break;
+                    }
+                case 6:
+                    {
+                    area=6;
+                    p.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+5) +"("+today1[5]+")";
+                    m6.innerHTML = "✔";
+                    m6.style.color = 'red';
+                    m6.style.fontSize = 'x-large';
+                    n6.style.backgroundColor = 'white';
+                        onc2(6);
+                        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()+5) +"("+today1[5]+")";
+                    break;
+                    }
+
+
+
+  
+            }
+            
+
+        }
+    </script>
+</head>
+<body onload="start()">
+    <header>
+        <p> <a href="중간과제.html" style="text-decoration:none;" target="_top">Ⓢ SUNNY CINEMA</a></p>
+        <table class="tb1">
+            <th>
+                <a href="https://www.facebook.com/LotteCinema.kr" style="text-decoration:none;" target="_blank">❤ 좋아요</a>
+            </th>
+            <th>
+                <a href="https://www.youtube.com/channel/UCi4KivcV3a3yhkycFsjpalQ" style="text-decoration:none;" target="_blank">♡ 구독하기</a>
+
+            </th>
+        </table>
+        <hr />
+        <span style="font-size:xx-large; font-family:Chiller" id="area_name"></span>
+
+        <table class="tb3">
+            <th>
+                <a href="https://www.lottecinema.co.kr/NLCHS/Mypage/MemberVipzone" style="text-decoration:none;" target="_top">멤버십</a>
+            </th>
+            <th>
+                <a href="https://www.lottecinema.co.kr/NLCHS/Customer" style="text-decoration:none;" target="_top">고객센터</a>
+            </th>
+            <th>
+                <a href="로그인_중간과제.html" style="text-decoration:none;" target="_top">로그인</a>
+
+            </th>
+        </table>
+
+
+    </header>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <section1>
+        <table id="tb1" style=" width:200px; margin:0 auto; position:absolute;left:50%;margin-left:-100px; table-layout:fixed; border-collapse:collapse;">
+            <tbody>
+                <tr>
+                    <td colspan="2" id="name" class="td1" style="text-align:center;color:white;background-color:black; "></td>
+
+                </tr>
+                <tr id="tr1" onclick="onc1(1)" style="cursor:pointer;">
+                    <td class="td1" id="day1">서울</td>
+                    <td class="td1" id="td1" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr2" onclick="onc1(2)" style="cursor:pointer;">
+                    <td class="td1" id="day2">경기/인천</td>
+                    <td class="td1" id="td2" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr3" onclick="onc1(3)" style="cursor:pointer;">
+                    <td class="td1" id="day3">충청/대전</td>
+                    <td class="td1" id="td3" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr4" onclick="onc1(4)" style="cursor:pointer;">
+                    <td class="td1" id="day4">전라/광주</td>
+                    <td class="td1" id="td4" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr5" onclick="onc1(5)" style="cursor:pointer;">
+                    <td class="td1" id="day5">경상/부산</td>
+                    <td class="td1" id="td5" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr6" onclick="onc1(6)" style="cursor:pointer;">
+                    <td class="td1" id="day6">강원</td>
+                    <td class="td1" id="td6" style="text-align:center;"></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section1>
+    <section2>
+        <table id="tb2" style=" width:200px; margin:0 auto; position:absolute;left:50%;margin-left:-100px; table-layout:fixed; border-collapse:collapse;">
+            <tbody>
+                <tr style="background-color:black; ">
+                    <td colspan="2" id="name2" class="td1" style="text-align:center;color:white; "></td>
+
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size:medium" id="td0"></td>
+                </tr>
+                <tr id="tr10" onclick="onc3(1)" style="cursor:pointer; height:50px">
+                    <td class="td3" id="td10_1"></td>
+                    <td class="td2" id="td10" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr20" onclick="onc3(2)" style="cursor:pointer;height:50px">
+                    <td class="td3" id="td10_2"></td>
+                    <td class="td2" id="td20" style="text-align:center; "></td>
+                </tr>
+                <tr id="tr30" onclick="onc3(3)" style="cursor:pointer;height:50px">
+                    <td class="td3" id="td10_3"></td>
+                    <td class="td2" id="td30" style="text-align:center; "></td>
+                </tr>
+                <tr id="tr40" onclick="onc3(4)" style="cursor:pointer;height:50px">
+                    <td class="td3" id="td10_4" ></td>
+                    <td class="td2" id="td40" style="text-align:center; "></td>
+                </tr>
+                <tr id="tr50" onclick="onc3(5)" style="cursor:pointer;height:50px">
+                    <td class="td3" id="td10_5"></td>
+                    <td class="td2" id="td50" style="text-align:center;"></td>
+                </tr>
+                <tr id="tr60" onclick="onc3(6)" style="cursor:pointer;height:50px">
+                    <td class="td3" id="td10_6" ></td>
+                    <td class="td2" id="td60" style="text-align:center;"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </section2>
+    <section4>
+        </br>
+        <table style=" width:300px; margin:0 auto; position:absolute;left:50%;margin-left:-380px; table-layout:fixed; border-collapse:collapse; ">
+            <tr>
+                <td>일반</td>
+                <td></td>
+                <td><button class="btn" onclick="btn(1,this)">1</button></td>
+                <td><button class="btn" onclick="btn(2,this)">2</button></td>
+                <td><button class="btn" onclick="btn(3,this)">3</button></td>
+                <td><button class="btn" onclick="btn(4,this)">4</button></td>
+                <td><button class="btn" onclick="btn(5,this)">5</button></td>
+                <td><button class="btn" onclick="btn(6,this)">6</button></td>
+                <td><button class="btn" onclick="btn(7,this)">7</button></td>
+                <td><button class="btn" onclick="btn(8,this)">8</button></td>
+            </tr>
+            <tr>
+                <td colspan="2">청소년</td>
+
+                <td><button class="btn1" onclick="btn1(1,this)">1</button></td>
+                <td><button class="btn1" onclick="btn1(2,this)">2</button></td>
+                <td><button class="btn1" onclick="btn1(3,this)">3</button></td>
+                <td><button class="btn1" onclick="btn1(4,this)">4</button></td>
+                <td><button class="btn1" onclick="btn1(5,this)">5</button></td>
+                <td><button class="btn1" onclick="btn1(6,this)">6</button></td>
+                <td><button class="btn1" onclick="btn1(7,this)">7</button></td>
+                <td><button class="btn1" onclick="btn1(8,this)">8</button></td>
+            </tr>
+        </table>
+        <table style=" text-align:center; width:400px; margin:0 auto; position:absolute;left:50%;margin-left:-50px; table-layout:fixed; border-collapse:collapse;">
+            <tr>
+                <td id="cinema_name">
+                    시간을 선택해주세요
+                </td>
+                <td>
+                    Sunny Cinema 본관
+                </td>
+
+                <td>
+                    <label>남은 좌석수 <span id="count" style="color:red">99</span>/99</label>
+                </td>
+
+            </tr>
+            <tr>
+                <td id="date" colspan="3" style="color:grey;font-size:larger;">오늘 날짜</td>
+            </tr>
+        </table>
+    </section4>
+    <section3 style="background-color:floralwhite">
+        <table style=" width:800px; margin:0 auto; position:absolute;left:50%;margin-left:-400px; table-layout:fixed; border-collapse:collapse; border:1px solid;">
+            <tbody>
+                <tr class="td1" style="text-align:center;color:white;background-color:black; width:800px">
+                    <td>인원/좌석/예매</td>
+                </tr>
+            </tbody>
+        </table>
+        <br /><br /><br />
+        <label style="width:500px; display:block; text-align:center; background-color:lightgray;margin-left:150px"> screen </label>
+        <br /><br />
+        <table style=" width:500px; margin:0 auto; position:absolute;left:50%;margin-left:-250px; table-layout:fixed; border-collapse:collapse; text-align:center;">
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td></td>
+                    <td></td>
+                    <td name="row1" class="pos" onclick="add_seat(1,0,this)">3</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row1" class="pos" onclick="add_seat(1,1,this)">7</td>
+                    <td></td>
+                    <td name="row1" class="pos" onclick="add_seat(1,2,this)">9</td>
+                    <td class="block">X</td>
+                    <td name="row1" class="pos" onclick="add_seat(1,3,this)">11</td>
+                    <td class="block">X</td>
+                    <td name="row1" class="pos" onclick="add_seat(1,4,this)">13</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row1" class="pos" onclick="add_seat(1,5,this)">15</td>
+                    <td class="block">X</td>
+                    <td name="row1" class="pos" onclick="add_seat(1,6,this)">17</td>
+                    <td class="block">X</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td></td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,0,this)">4</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,1,this)">6</td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,2,this)">8</td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,3,this)">10</td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,4,this)">12</td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,5,this)">14</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,6,this)">16</td>
+                    <td class="block">X</td>
+                    <td name="row2" class="pos" onclick="add_seat(2,7,this)">18</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td></td>
+                    <td></td>
+                    <td name="row3" class="pos" onclick="add_seat(3,0,this)">3</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row3" class="pos" onclick="add_seat(3,1,this)">5</td>
+                    <td class="block">X</td>
+                    <td name="row3" class="pos" onclick="add_seat(3,2,this)">7</td>
+                    <td class="block">X</td>
+                    <td name="row3" class="pos" onclick="add_seat(3,3,this)">9</td>
+                    <td class="block">X</td>
+                    <td name="row3" class="pos" onclick="add_seat(3,4,this)">11</td>
+                    <td class="block">X</td>
+                    <td name="row3" class="pos" onclick="add_seat(3,5,this)">13</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row3" class="pos" onclick="add_seat(3,6,this)">15</td>
+                    <td class="block">X</td>
+                    <td name="row3" class="pos" onclick="add_seat(3,7,this)">17</td>
+                    <td class="block">X</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td></td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,0,this)">4</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,1,this)">6</td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,2,this)">8</td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,3,this)">10</td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,4,this)">12</td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,5,this)">14</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,6,this)">16</td>
+                    <td class="block">X</td>
+                    <td name="row4" class="pos" onclick="add_seat(4,7,this)">18</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td></td>
+                    <td></td>
+                    <td name="row5" class="pos" onclick="add_seat(5,0,this)">3</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row5" class="pos" onclick="add_seat(5,1,this)">5</td>
+                    <td class="block">X</td>
+                    <td name="row5" class="pos" onclick="add_seat(5,2,this)">7</td>
+                    <td class="block">X</td>
+                    <td name="row5" class="pos" onclick="add_seat(5,3,this)">9</td>
+                    <td class="block">X</td>
+                    <td name="row5" class="pos" onclick="add_seat(5,4,this)">11</td>
+                    <td class="block">X</td>
+                    <td name="row5" class="pos" onclick="add_seat(5,5,this)">13</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row5" class="pos" onclick="add_seat(5,6,this)">15</td>
+                    <td class="block">X</td>
+                    <td name="row5" class="pos" onclick="add_seat(5,7,this)">17</td>
+                    <td class="block">X</td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td></td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,0,this)">4</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,1,this)">6</td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,2,this)">8</td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,3,this)">10</td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,4,this)">12</td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,5,this)">14</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,6,this)">16</td>
+                    <td class="block">X</td>
+                    <td name="row6" class="pos" onclick="add_seat(6,7,this)">18</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td></td>
+                    <td></td>
+                    <td name="row7" class="pos" onclick="add_seat(7,0,this)">3</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row7" class="pos" onclick="add_seat(7,1,this)">5</td>
+                    <td class="block">X</td>
+                    <td class="pos" name="row7" onclick="add_seat(7,2,this)">7</td>
+                    <td class="block">X</td>
+                    <td name="row7" class="pos" onclick="add_seat(7,3,this)">9</td>
+                    <td class="block">X</td>
+                    <td name="row7" class="pos" onclick="add_seat(7,4,this)">11</td>
+                    <td class="block">X</td>
+                    <td name="row7" class="pos" onclick="add_seat(7,5,this)">13</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row7" class="pos" onclick="add_seat(7,6,this)">15</td>
+                    <td class="block">X</td>
+                    <td name="row7" class="pos" onclick="add_seat(7,7,this)">17</td>
+                    <td class="block">X</td>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td></td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,0,this)">4</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,1,this)">6</td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,2,this)">8</td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,3,this)">10</td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,4,this)">12</td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,5,this)">14</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,6,this)">16</td>
+                    <td class="block">X</td>
+                    <td name="row8" class="pos" onclick="add_seat(8,7,this)">18</td>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,0,this)">1</td>
+                    <td class="block">X</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,1,this)">3</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row9" class="pos" onclick="add_seat(9,2,this)">5</td>
+                    <td class="block">X</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,3,this)">7</td>
+                    <td class="block">X</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,4,this)">9</td>
+                    <td class="block">X</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,5,this)">11</td>
+                    <td class="block">X</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,6,this)">13</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row9" class="pos" onclick="add_seat(9,7,this)">15</td>
+                    <td class="block">X</td>
+                    <td name="row9" class="pos" onclick="add_seat(9,8,this)">17</td>
+                    <td class="block">X</td>
+                </tr>
+                <tr>
+                    <td>J</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,0,this)">2</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,1,this)">4</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,2,this)">6</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,3,this)">8</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,4,this)">10</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,5,this)">12</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,6,this)">14</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,7,this)">16</td>
+                    <td class="block">X</td>
+                    <td name="row10" class="pos" onclick="add_seat(10,8,this)">18</td>
+                </tr>
+                <tr>
+                    <td>K</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,0,this)">1</td>
+                    <td class="block">X</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,1,this)">3</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row11" class="pos" onclick="add_seat(11,2,this)">5</td>
+                    <td class="block">X</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,3,this)">7</td>
+                    <td class="block">X</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,4,this)">9</td>
+                    <td class="block">X</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,5,this)">11</td>
+                    <td class="block">X</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,6,this)">13</td>
+                    <td class="block">X</td>
+                    <td></td>
+                    <td name="row11" class="pos" onclick="add_seat(11,7,this)">15</td>
+                    <td class="block">X</td>
+                    <td name="row11" class="pos" onclick="add_seat(11,8,this)">17</td>
+                    <td class="block">X</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,0,this)">2</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,1,this)">4</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,2,this)">6</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,3,this)">8</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,4,this)">10</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,5,this)">12</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,6,this)">14</td>
+                    <td></td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,7,this)">16</td>
+                    <td class="block">X</td>
+                    <td name="row12" class="pos" onclick="add_seat(12,8,this)">18</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section3>
+    <section5 id="img">
+        <label class="back" onclick="back()"></label>
+        <label class="go" onclick="go()"></label>
+        <img id="movie" src="1987_포.png" style="margin-left:150px;position:absolute;font-size:small;" />
+        <label id="infor" style="color:white;margin-left:370px; position:absolute;margin-top:50px; ">asdas</label>
+        <label id="infor1" style="color:white;margin-left:370px; position:absolute;margin-top:90px; font-size:small;">asdas</label>
+        <label id="infor2" style="color:white;margin-left:370px; position:absolute;margin-top:115px; font-size:small;">asdas</label>
+        <label id="infor3" style="color:white;margin-left:370px; position:absolute;margin-top:140px; font-size:small;">asdas</label>
+        <label id="infor4" style="color:white;margin-left:370px; position:absolute;margin-top:165px; font-size:small;">asdas</label>
+        <label id="infor5" style="color:white;margin-left:520px; position:absolute;margin-top:50px; font-size:small;">좌석명</label>
+        <label id="infor6" style="color:white;margin-left:580px; position:absolute;margin-top:50px; font-size:small;">일반석</label>
+        <lable id="infor7_1" style="color:white;margin-left:520px; position:absolute;margin-top:75px; font-size:small;">좌석번호</lable>
+        <label id="infor7" style="color:white;margin-left:520px; position:absolute;margin-top:90px; font-size:small;"></label>
+
+    </section5>
+    <dialog id="finish" style="height:500px;width:950px;border-radius:20px; background-color:floralwhite;">    
+        
+        <table class="diatable">
+            <tbody>
+                <tr style="width:950px; background-color:black; color:white; ">
+                    <td colspan="2" style="width:400px"> <span style="font-weight:bolder; font-size:large">● 예매정보 </span><span style="font-size:smaller;"> 결제하시기 전 예매내역을 다시 한번 확인해 주세요.</span></td>
+                    <td style="width:400px"><span style="font-weight:bolder; font-size:large">● 결제정보</span><span style="font-size:smaller;"> 결제하기 버튼을 클릭하시면 결제가 완료됩니다.</span></td>
+                </tr>
+                <tr>
+                    <br />
+                    <td> <img id="tbimg" /></td>
+                    <td style="font-size:large">
+                        
+                        영화명 <span id="moviename" style="font-size:small"></span> <br /><br />
+                        극장 <span id="moviearea" style="font-size:small""></span> <br /><br />
+                        상영관 <span style="font-size:small">2관(Laser) 6층</span> <br /><br />
+                        일시 <span id="moviedate" style="font-size:x-small"></span> <br /><br />
+                        인원 <span id="moviepeople" style="font-size:small"><span id="adult"></span>  <span id="young"></span></span><br /><br />
+                        좌석 <span id="movieseat" style="font-size:small"></span>
+
+                    </td>  
+                    <td style="font-size:large;">
+                        
+                        <span id="prize1"></span><br />
+                        <span id="prize2"></span><br />
+                        결제금액 <span id="total" style="color:red;"></span><br /><br />
+               </tr>
+                <tr>
+                    <td style="background-color:white;"colspan="3">
+
+                        ○ 인터넷 예매는 온라인상으로 영화상영 시간 20분 전 까지 취소 가능하며 20분 이후에는 현장에서 취소를 하셔야 합니다.<br />
+
+                        ○ 현장 취소를 하는 경우 상영시간 이전까지만 가능하며 영화 상영 시작 시간 이후 취소나 환불은 되지 않습니다. <br />
+
+                        ○ 극장 이용 시 마스크 착용은 필수입니다. (미착용 시 입장 제한) 입장 지연에 따른 관람 불편을 최소화하기 위해 본 영화는 10분 후 상영이 시작됩니다.
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <input type="button" id="buy" value="결제하기" style="margin-left:640px; position:absolute;margin-top:400px; width:140px; height:50px; background-color:red;cursor:pointer;color:white;font-size:larger;" onclick="last()"/>
+        <input type="button" id="cancel" value="취소" style="margin-left:790px;position:absolute; margin-top:400px; width:105px;height:50px;background-color:dimgrey;cursor:pointer;color:white;font-size:larger;" onclick="dia_close()"/>
+        
+    </dialog>
+
+
+</body>
+</html>

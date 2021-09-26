@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>회원가입양식</title>
+    <style>
+        html, body {
+            height: 100%;
+            background-color: ghostwhite;
+        }
+
+        header {
+            color: tomato;
+            text-align: center;
+            font-size: x-large;
+            width: 100%;
+            height: 110px;
+        }
+
+        section {
+            font-size: larger;
+            width: 100%;
+            height: 78%;
+            font-size: large;
+        }
+
+        .center {
+            height: 45px;
+            width: 400px;
+            font-size: x-large;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            margin-left: -200px;
+        }
+
+        .center1 {
+            height: 40px;
+            width: 400px;
+            font-size: medium;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            margin-left: -200px;
+            font-weight: bolder
+        }
+
+        .center2 {
+            height: 10px;
+            width: 400px;
+            font-size: small;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            margin-left: -200px;
+            color: red;
+        }
+    </style>
+    <script>
+        var num0 = false;
+        var num1 = false;
+        var num2 = false;
+        var num3 = false;
+        var array = new array();
+        function fc1() {
+            var n = document.getElementById("text1");
+            var p = document.getElementById("id");
+            var text = n.value;
+            var worker = new Worker('worker.js');
+            worker.postMessage(n.value);
+            worker.onmessage = function (event) {
+                msg = event.data[0];
+                num0 = event.data[1];
+                document.getElementById("id").innerHTML = msg;
+                p.style.color = event.data[2];
+            };
+
+        }
+
+        function fc2() {
+            var pw = document.getElementById("text2").value;
+            var num = pw.search(/[0-9]/g);
+            var eng = pw.search(/[a-z]/ig);
+            var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+            var p = document.getElementById("password");
+
+
+            if (num < 0 || eng < 0 || spe < 0 || pw.length < 8 || pw.length > 16) {
+                document.getElementById("password").innerHTML = "8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.";
+                num1 = false;
+            }
+            else {
+                 p.style.color = "tomato";
+                document.getElementById("password").innerHTML = "사용 가능";
+                 num1 = true;
+            }
+
+        }
+
+        function fc3() {
+            var pw = document.getElementById("text2").value;
+            var pwc = document.getElementById("text3").value;
+            var p = document.getElementById("passwordcheck");
+            if (pw == pwc) {
+                p.style.color = "tomato";
+                document.getElementById("passwordcheck").innerHTML = "비밀번호 일치";
+                num2 = true;
+            }
+            else {
+                p.style.color = "red";
+                document.getElementById("passwordcheck").innerHTML = "비밀번호가 일치하지 않습니다.";
+                num2 = false;
+            }
+
+        }
+        function fc4() {
+            var n = document.getElementById("text4").value;
+            if (n=="") {
+
+                document.getElementById("name").innerHTML = "필수 정보입니다.";
+                num3 = false;
+            }
+            else {
+                document.getElementById("name").innerHTML = "";
+                num3 = true;
+            }
+        }
+        function fc5() {
+            if (!num0) {
+                alert("아이디를 입력해주세요");
+            }
+            else if (!num1) {
+                alert("비밀번호를 입력해주세요");
+            }
+            else if (!num2) {
+                alert("비밀번호 재확인을 확인해주세요");
+            }
+            else if (!num3) {
+                alert("이름을 입력해주세요");
+            }
+            else {
+                location.href = "로그인_중간과제.html"
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <header><h1>회원가입</h1></header>
+
+    <section>
+
+        <label class="center1">아이디 <br /><input id="text1" class="center" src="worker.js" type="text" size="50" onchange="fc1()" /></label>
+        <br /><br /><br /><p id="id" class="center2"></p><br />
+        <label class="center1">비밀번호 <br /><input id="text2" class="center" type="password" size="50" onchange="fc2()" /></label>
+        <br /><br /><br /><p id="password" class="center2"></p><br />
+        <label class="center1">비밀번호 재확인 <br /><input id="text3" class="center" type="password" size="50" onchange="fc3()" /></label>
+        <br /><br /><br /><p id="passwordcheck" class="center2"></p><br />
+        <label class="center1">이름 <br /><input id="text4" class="center" type="text" size="50" onchange="fc4()" /></label>
+        <br /><br /><br /><p id="name" class="center2"></p><br />
+        <label class="center1">생년월일 <br /><input class="center" type="date" size="50" /></label>
+        <br /><br /><br /><br />
+        <label class="center1">
+            성별 <br />
+            <input class="center" type="text" size="50" list="gender" />
+            <datalist id="gender">
+                <option value="남자"></option>
+                <option value="여자"></option>
+                <option value="선택안함"></option>
+            </datalist>
+        </label>
+        <br /><br /><br /><br />
+        <label class="center1">이메일 <br /><input class="center" type="text" size="50" /></label>
+
+        <br /><br /><br /><br /><br />
+
+       
+       <input style="width:410px;height:50px; margin:0 auto; position:absolute;left:50%;margin-left:-200px;
+             background-color:tomato;font-size:larger;color:white" type="button" onclick="fc5()" value="가입하기">
+        
+
+    </section>
+
+
+    
+
+</body>
+</html>

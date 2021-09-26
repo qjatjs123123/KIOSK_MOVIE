@@ -1,0 +1,866 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>중간과제</title>
+
+    <style>
+        html,body{height:100%;background-color:white;margin:0;width:100%;}
+        header{
+        width:100%;height:160px;text-align:center;color:black;font-size:x-large;
+        margin:0 auto; position:absolute;left:50%;margin-left:-50%;font-weight:900;
+        background : linear-gradient(to top,transparent,black); color:white; 
+        }
+        table{
+        opacity:1.0;
+        margin:auto;
+        font-size:large;
+        position:absolute;
+        height:5px;width:450px; font-size:small;margin:0 auto; left:50%; margin-left:-225px;
+        }
+        hr{
+            width:1000px;
+        }
+        section1{
+            margin:0;width:15%;height:800px;background-color:black;float:left;
+        }
+        section2{
+            width:5%;height:800px; background : linear-gradient(to left,transparent,black);float:left;
+        }
+        .hr1{
+            position:absolute;left:50%;margin-left:-50%;border-style:dashed;border-width:1px;
+        }
+        section{
+        width:70%;height:800px;margin:0 auto;background-repeat:no-repeat;background-image:url("리틀포레스트.PNG");background-position:center;background-size:cover;position:static;
+        
+
+        }
+        section3{
+            width:15%;height:800px;
+            background-color:black;
+            float:right;
+
+        }
+        section4{
+            width:5%;height:800px;
+            background : linear-gradient(to right,transparent,black);
+            float:right;
+             
+        }
+
+        section5{
+        
+        position:absolute;
+        width:100%;height:160px;   
+        background:linear-gradient(to bottom,transparent,black);
+        top:640px;
+        left:0px;
+        }
+        section6{
+            width:100%;
+            height:400px;
+            margin-top:800px;
+
+            background-color:black;
+            position:absolute;
+            
+
+        }
+        section7{
+            width:100%;
+            height:1000px;
+            margin-top:1200px;
+            background-color:white;
+            position:absolute;
+            left:50%;margin-left:-515px;
+            color:black;
+        }
+
+    .tb1{opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:-515px; top:30%;
+    }
+
+
+    .tb2{opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:335px; 
+
+    }
+    .tb3{
+        opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:330px; top:30%;
+    }
+	.left {left:30px;background:url('left.png') center center / 100% no-repeat;
+           position:absolute;top:40%;transform:translateY(-50%);padding:50px;cursor:pointer;
+	}
+	.right {right:30px;background:url('right.png') center center / 100% no-repeat;
+            position:absolute;top:40%;transform:translateY(-50%);padding:50px;cursor:pointer;
+	}
+    .play {right:48%;background:url('play.png') center center / 100% no-repeat;
+            position:absolute;top:40%;transform:translateY(-50%);padding:50px;cursor:pointer;
+	}
+    .close{
+            right:-5%;background:url('close.png') center center / 100% no-repeat;
+            position:absolute;top:2%;transform:translateY(-50%);padding:60px;cursor:pointer;
+    }
+    a:hover{
+            color:white;
+            
+        }
+    a:visited{
+             color:white;
+        }
+    
+    
+    </style>
+
+    <script>
+        var count = 1;
+        var con = 3;
+        var index = 0;
+        var imgArray = new Array();
+        var local_con = 0;
+        imgArray[0] = "리틀포레스트.PNG";
+        imgArray[1] = "1987.PNG";
+        imgArray[2] = "부산행.PNG";
+        imgArray[3] = "청년경찰.PNG";
+        imgArray[4] = "국제시장.PNG";
+        
+
+        if (localStorage.getItem('check_local') == null) {
+            var movielist = new Array();
+            var SEOUL1 = new Array();
+            var SEOUL2 = new Array();
+            var SEOUL3 = new Array();
+            var SEOUL4 = new Array();
+            var SEOUL5 = new Array();
+            var SEOUL6 = new Array();
+            var GIDO1 = new Array();
+            var GIDO2 = new Array();
+            var GIDO3 = new Array();
+            var GIDO4 = new Array();
+            var GIDO5 = new Array();
+            var GIDO6 = new Array();
+            var CHEONG1 = new Array();
+            var CHEONG2 = new Array();
+            var CHEONG3 = new Array();
+            var CHEONG4 = new Array();
+            var CHEONG5 = new Array();
+            var CHEONG6 = new Array();
+            var LADO1 = new Array();
+            var LADO2 = new Array();
+            var LADO3 = new Array();
+            var LADO4 = new Array();
+            var LADO5 = new Array();
+            var LADO6 = new Array();
+            var SANG1 = new Array();
+            var SANG2 = new Array();
+            var SANG3 = new Array();
+            var SANG4 = new Array();
+            var SANG5 = new Array();
+            var SANG6 = new Array();
+            var WON1 = new Array();
+            var WON2 = new Array();
+            var WON3 = new Array();
+            var WON4 = new Array();
+            var WON5 = new Array();
+            var WON6 = new Array();
+            var today1_movie1 = new Array(); 
+            var today2_movie1 = new Array();
+            var today3_movie1 = new Array();
+            var today4_movie1 = new Array();
+            var today5_movie1 = new Array();
+            var today6_movie1 = new Array();
+
+            today_movie = [0, 0, 0, 0, 0, 0];
+            movielist = ["리틀 포레스트", "1987", "부산행", "청년경찰", "국제시장", "리틀 포레스트"];
+            SEOUL1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            GIDO1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            CHEONG1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            LADO1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
+            SANG1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
+            WON1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            today1_movie1 = ["08:00", "11:00", "14:00", "17:00", "20:00", "23:00"];
+            today2_movie1 = ["16:30", "19:30", "22:30", "X", "X", "X"];
+            today3_movie1 = ["13:10", "16:10", "19:10", "22:10", "X", "X"];
+            today4_movie1 = ["13:50", "16:50", "19:50", "X", "X", "X"];
+            today5_movie1 = ["09:45", "12:45", "15:45", "18:45", "21:45", "X"];
+            today6_movie1 = ["09:15", "12:15", "15:15", "X", "X", "X"];
+
+            txt = ["리틀 포레스트", "1987", "부산행", "청년경찰", "국제시장"];
+
+            localStorage.setItem("mov_array", JSON.stringify(movielist));
+            localStorage.setItem("SEOUL1", JSON.stringify(SEOUL1));
+            localStorage.setItem("SEOUL2", JSON.stringify(SEOUL2));
+            localStorage.setItem("SEOUL3", JSON.stringify(SEOUL3));
+            localStorage.setItem("SEOUL4", JSON.stringify(SEOUL4));
+            localStorage.setItem("SEOUL5", JSON.stringify(SEOUL5));
+            localStorage.setItem("SEOUL6", JSON.stringify(SEOUL6));
+
+            localStorage.setItem("GIDO1", JSON.stringify(GIDO1));
+            localStorage.setItem("GIDO2", JSON.stringify(GIDO2));
+            localStorage.setItem("GIDO3", JSON.stringify(GIDO3));
+            localStorage.setItem("GIDO4", JSON.stringify(GIDO4));
+            localStorage.setItem("GIDO5", JSON.stringify(GIDO5));
+            localStorage.setItem("GIDO6", JSON.stringify(GIDO6));
+
+            localStorage.setItem("CHEONG1", JSON.stringify(CHEONG1));
+            localStorage.setItem("CHEONG2", JSON.stringify(CHEONG2));
+            localStorage.setItem("CHEONG3", JSON.stringify(CHEONG3));
+            localStorage.setItem("CHEONG4", JSON.stringify(CHEONG4));
+            localStorage.setItem("CHEONG5", JSON.stringify(CHEONG5));
+             localStorage.setItem("CHEONG6", JSON.stringify(CHEONG6));
+
+            localStorage.setItem("LADO1", JSON.stringify(LADO1));
+            localStorage.setItem("LADO2", JSON.stringify(LADO2));
+            localStorage.setItem("LADO3", JSON.stringify(LADO3));
+            localStorage.setItem("LADO4", JSON.stringify(LADO4));
+            localStorage.setItem("LADO5", JSON.stringify(LADO5));
+            localStorage.setItem("LADO6", JSON.stringify(LADO6));
+
+            localStorage.setItem("SANG1", JSON.stringify(SANG1));
+            localStorage.setItem("SANG2", JSON.stringify(SANG2));
+            localStorage.setItem("SANG3", JSON.stringify(SANG3));
+            localStorage.setItem("SANG4", JSON.stringify(SANG4));
+            localStorage.setItem("SANG5", JSON.stringify(SANG5));
+            localStorage.setItem("SANG6", JSON.stringify(SANG6));
+
+            localStorage.setItem("WON1", JSON.stringify(WON1));
+            localStorage.setItem("WON2", JSON.stringify(WON2));
+            localStorage.setItem("WON3", JSON.stringify(WON3));
+            localStorage.setItem("WON4", JSON.stringify(WON4));
+            localStorage.setItem("WON5", JSON.stringify(WON5));
+            localStorage.setItem("WON6", JSON.stringify(WON6));
+
+            localStorage.setItem("movie1", 0);
+            localStorage.setItem("movie2", 0);
+            localStorage.setItem("movie3", 0);
+            localStorage.setItem("movie4", 0);
+            localStorage.setItem("movie5", 0);
+
+            localStorage.setItem("today1_movie1", JSON.stringify(today1_movie1));
+          
+            localStorage.setItem("today2_movie1", JSON.stringify(today2_movie1));
+            
+            localStorage.setItem("today3_movie1", JSON.stringify(today3_movie1));
+            
+            localStorage.setItem("today4_movie1", JSON.stringify(today4_movie1));
+           
+            localStorage.setItem("today5_movie1", JSON.stringify(today5_movie1));
+            
+            localStorage.setItem("today6_movie1", JSON.stringify(today6_movie1));
+
+            localStorage.setItem("txt", JSON.stringify(txt));
+
+            localStorage.setItem("t_total1", 0);
+            localStorage.setItem("t_total2", 0);
+            localStorage.setItem("t_total3", 0);
+            localStorage.setItem("t_total4", 0);
+            localStorage.setItem("t_total5", 0);
+            localStorage.setItem("t_total6", 0);
+            localStorage.setItem("ci_area", "서울/강남");    
+            }
+
+
+
+         localStorage.setItem("check_local", 1);
+         local_con = localStorage.getItem('check_local');
+
+        
+        function mouseout(num2) {
+                file_name1 = localStorage.getItem('file1_name1');
+                file_name2 = localStorage.getItem('file1_name2');
+                file_name3 = localStorage.getItem('file1_name3');
+                file_name4 = localStorage.getItem('file1_name4');
+                file_name5 = localStorage.getItem('file1_name5');
+                file_name6 = localStorage.getItem('file1_name6');
+
+                var t1 = document.getElementById('t1');
+                var t2 = document.getElementById('t2');
+                var t3 = document.getElementById('t3');
+                var t4 = document.getElementById('t4');
+                var t5 = document.getElementById('t5');
+                     switch (num2) {
+                         case 1: {
+                             
+                             t1.style.opacity = 1.0
+                             t1.innerHTML = "";
+                             t1.backgroundImage = "url("+file_name1+")";
+                             break;
+                         }
+                         case 2: {
+                             t2.style.opacity = 1.0
+                             t2.innerHTML = "";
+                             t2.backgroundImage = "url("+file_name2+")";
+                             break;
+                         }
+                         case 3: {
+                             t3.style.opacity = 1.0
+                             t3.innerHTML = "";
+                             t3.backgroundImage = "url("+file_name3+")";
+                             break;
+                         }
+                         case 4: {
+                             t4.style.opacity = 1.0
+                             t4.innerHTML = "";
+                             t4.backgroundImage = "url("+file_name5+")";
+                             break;
+                         }
+                         case 5: {
+                             t5.style.opacity = 1.0
+                             t5.innerHTML = "";
+                             t5.backgroundImage = "url("+file_name6+")";
+                             break;
+                         }
+
+                       
+                    }
+        }
+        function clcl(num) {
+            index = num;
+            array_name = new Array();
+            array_movie = new Array();
+            array_movie = localStorage.getItem('mov_array');
+            storedStorage3 = JSON.parse(array_movie);
+            
+            if (num == 1) {          
+                for (i = 0; i < 6; i++) {              
+                    if (storedStorage3[i] == storedStorage3[0]) {
+                        array_name[i] = 1;
+                    }
+                    else {
+                        array_name[i] = 0;
+                    }
+                }           
+            }
+            else if (num == 2) {          
+                for (i = 0; i < 6; i++) {              
+                    if (storedStorage3[i] == storedStorage3[1]) {
+                        array_name[i] = 1;
+                    }
+                    else {
+                        array_name[i] = 0;
+                    }
+                }           
+            }
+            else if (num == 3) {          
+                for (i = 0; i < 6; i++) {              
+                    if (storedStorage3[i] == storedStorage3[2]) {
+                        array_name[i] = 1;
+                    }
+                    else {
+                        array_name[i] = 0;
+                    }
+                }           
+            }
+            else if (num == 4) {          
+                for (i = 0; i < 6; i++) {              
+                    if (storedStorage3[i] == storedStorage3[3]) {
+                        array_name[i] = 1;
+                    }
+                    else {
+                        array_name[i] = 0;
+                    }
+                }           
+            }
+            else if (num == 5) {          
+                for (i = 0; i < 6; i++) {              
+                    if (storedStorage3[i] == storedStorage3[4]) {
+                        array_name[i] = 1;
+                    }
+                    else {
+                        array_name[i] = 0;
+                    }
+                }           
+            }
+
+            localStorage.setItem("array_name", JSON.stringify(array_name));     
+            localStorage.setItem("image", index);           
+            location.href = "예매_중간과제.html";
+        }
+        
+        function mouseon(num1) {
+            file_name1 = localStorage.getItem('file1_name1');
+            file_name2 = localStorage.getItem('file1_name2');
+            file_name3 = localStorage.getItem('file1_name3');
+            file_name4 = localStorage.getItem('file1_name4');
+            file_name5 = localStorage.getItem('file1_name5');
+            file_name6 = localStorage.getItem('file1_name6');
+            var t1 = document.getElementById('t1');
+            var t2 = document.getElementById('t2');
+            var t3 = document.getElementById('t3');
+            var t4 = document.getElementById('t4');
+            var t5 = document.getElementById('t5');
+            switch (num1) {
+                case 1: {
+                    t1.style.backgroundImage = "url("+file_name1+")";
+                    t1.style.backgroundRepeat = 'no-repeat';
+                    t1.style.opacity = 0.8;
+                    t1.innerHTML = "<input type=button value='예매하기' style='opacity:1.0; color:black; width:130px;height:30px;cursor:pointer;font-size:large;font-weight:900' onmousedown='clcl(1)'>"
+                    break;
+                }
+                case 2: {
+                    t2.style.backgroundImage = "url("+file_name2+")";
+                    t2.style.backgroundRepeat = 'no-repeat';
+                    t2.style.opacity = 0.8;
+                    t2.innerHTML = "<input type=button value='예매하기' style='opacity:1.0; color:black; width:130px;height:30px;cursor:pointer;font-size:large;font-weight:900' onmousedown='clcl(2)'>"
+                    break;
+                }
+                case 3: {
+                    t3.style.backgroundImage = "url("+file_name3+")";
+                    t3.style.backgroundRepeat = 'no-repeat';
+                    t3.style.opacity = 0.8;
+                    t3.innerHTML = "<input type=button value='예매하기' style='opacity:1.0; color:black; width:130px;height:30px;cursor:pointer;font-size:large;font-weight:900' onmousedown='clcl(3)'>"
+                    break;
+                }
+                case 4: {
+                    t4.style.backgroundImage = "url("+file_name4+")";
+                    t4.style.backgroundRepeat = 'no-repeat';
+                    t4.style.opacity = 0.8;
+                    t4.innerHTML = "<input type=button value='예매하기' style='opacity:1.0; color:black; width:130px;height:30px;cursor:pointer;font-size:large;font-weight:900' onmousedown='clcl(4)'>"
+                    break;
+                }
+                case 5: {
+                    t5.style.backgroundImage = "url("+file_name5+")";
+                    t5.style.backgroundRepeat = 'no-repeat';
+                    t5.style.opacity = 0.8;
+                    t5.innerHTML = "<input type=button value='예매하기' style='opacity:1.0; color:black; width:130px;height:30px;cursor:pointer;font-size:large;font-weight:900' onmousedown='clcl(5)'>"
+                    break;
+                }
+                    
+            }
+            
+        }
+
+        function ch(num) {
+
+            file_name1 = localStorage.getItem('file_name1');
+            file_name2 = localStorage.getItem('file_name2');
+            file_name3 = localStorage.getItem('file_name3');
+            file_name4 = localStorage.getItem('file_name4');
+            file_name5 = localStorage.getItem('file_name5');
+            file_name6 = localStorage.getItem('file_name6');
+            k = num;
+            var n = document.getElementById("img");
+            
+            if (count == 1) {   
+                
+                if (k == 1) {
+                    n.style.backgroundImage = "url("+file_name2+")";
+                    count++;
+                }
+                else {
+                    n.style.backgroundImage = "url("+file_name4+")";
+                    count =5;
+                }
+                
+                
+            }
+            else if (count == 2) {
+                
+                if (k == 1) {
+                    count++;
+                    n.style.backgroundImage = "url("+file_name3+")";
+                }
+
+                else {
+                    count--;
+                    n.style.backgroundImage = "url("+file_name1+")";
+                }
+                    
+            }
+            else if (count == 3) {
+                
+                if (k == 1) {
+                    n.style.backgroundImage = "url("+file_name4+")";
+                    count++;
+                }
+                else {
+                    count--;
+                    n.style.backgroundImage = "url("+file_name2+")";
+                }
+            }
+            else if (count == 4) {
+                
+                if (k == 1) {
+                    n.style.backgroundImage = "url("+file_name5+")";
+                    count++;
+                }
+                else {
+                    count--;
+                    n.style.backgroundImage = "url("+file_name3+")";
+                }
+            }
+            else if (count == 5) {
+                
+                if (k == 1) {
+                    n.style.backgroundImage = "url("+file_name1+")";
+                    count = 1;
+                }
+                else {
+                    count--;
+                    n.style.backgroundImage = "url("+file_name4+")";
+                }
+            }
+
+        }
+
+        function ch_bg() { 
+            con = 1;
+            ch(con);
+        }      
+        function ch_bg1() {
+            con = 2;
+            ch(con);
+            
+        }
+
+        function show_dia() {
+            var a = document.getElementById('play');
+            var vid = document.getElementById('vi');
+            file_name1 = localStorage.getItem('file2_name1');
+            file_name2 = localStorage.getItem('file2_name2');
+            file_name3 = localStorage.getItem('file2_name3');
+            file_name4 = localStorage.getItem('file2_name4');
+            file_name5 = localStorage.getItem('file2_name5');
+            file_name6 = localStorage.getItem('file2_name6');
+            a.showModal();
+            if (count == 1) {
+                vid.src = file_name1;
+                vid.autoplay="autoplay";
+            }
+
+            else if (count == 2) {
+                vid.src = file_name2;
+                vid.autoplay="autoplay";
+            }
+            else if (count == 3) {
+                vid.src = file_name3;
+                vid.autoplay="autoplay";
+            }
+            else if (count == 4) {
+                vid.src = file_name4;
+                vid.autoplay="autoplay";
+            }
+            else if (count == 5) {
+                vid.src = file_name5;
+                vid.autoplay="autoplay";
+            }
+        }
+        function dia_close() {
+            var a = document.getElementById('play');
+            var vid = document.getElementById('vi');
+            vid.pause();
+            
+            a.close();
+        }
+        function showImage() {
+            
+            r = new Array();
+            r_1 = new Array();
+            r_array = new Array();
+            r_1[0] = document.getElementById('rank1');
+            r_1[1] = document.getElementById('rank2');
+            r_1[2] = document.getElementById('rank3');
+            r_1[3] = document.getElementById('rank4');
+            r_1[4] = document.getElementById('rank5');
+            
+            r[0] = localStorage.getItem('movie1');
+            r[1] = localStorage.getItem('movie2');
+            r[2] = localStorage.getItem('movie3');
+            r[3] = localStorage.getItem('movie4');
+            r[4] = localStorage.getItem('movie5');
+            
+            file0_name1 = localStorage.getItem('file1_name1');
+            file0_name2 = localStorage.getItem('file1_name2');
+            file0_name3 = localStorage.getItem('file1_name3');
+            file0_name4 = localStorage.getItem('file1_name4');
+            file0_name5 = localStorage.getItem('file1_name5');
+            file0_name6 = localStorage.getItem('file1_name6');
+            t1 = document.getElementById('t1');
+            t2 = document.getElementById('t2');
+            t3 = document.getElementById('t3');
+            t4 = document.getElementById('t4');
+            t5 = document.getElementById('t5');
+
+
+            var vid = document.getElementById('vi');
+
+            var n = document.getElementById("img");
+            ch(1);
+            setTimeout("showImage()", 5000);
+
+
+
+
+            for (i = 0; i < 5; i++) {
+                r_array[i] = r[i];
+             }
+            r_array.sort(function(a, b)  {
+                  return a - b;
+            });
+
+            for (i = 0; i < 5; i++) {
+                if (r[i] == r_array[4]) {
+                    r_1[i].innerHTML = "예매율 1위"
+                }
+                else if (r[i] == r_array[3]) {
+                    r_1[i].innerHTML = "예매율 2위"
+                }
+                else if (r[i] == r_array[2]) {
+                    r_1[i].innerHTML = "예매율 3위"
+                }
+                else if (r[i] == r_array[1]) {
+                    r_1[i].innerHTML = "예매율 4위"
+                }
+                else if (r[i] == r_array[0]) {
+                    r_1[i].innerHTML = "예매율 5위"
+                }
+            }
+
+            t1.style.backgroundImage = "url(" + file0_name1 + ")";
+            t2.style.backgroundImage = "url(" + file0_name2 + ")";
+            t3.style.backgroundImage = "url(" + file0_name3 + ")";
+            t4.style.backgroundImage = "url(" + file0_name4 + ")";
+            t5.style.backgroundImage = "url(" + file0_name5 + ")";
+
+            array_movie0 = new Array();
+            storedStorage30 = new Array();
+            array_movie0 = localStorage.getItem('mov_array');
+            storedStorage30 = JSON.parse(array_movie0);
+
+            
+
+            t1_1.innerHTML = storedStorage30[0]
+            t1_2.innerHTML = storedStorage30[1]
+            t1_3.innerHTML = storedStorage30[2]
+            t1_4.innerHTML = storedStorage30[3]
+            t1_5.innerHTML = storedStorage30[4]
+
+            today_num = new Array();
+            today_num = document.getElementsByClassName('today');
+
+            date = new Date();
+            week = new Array('일', '월', '화', '수', '목', '금', '토');
+            today = date.getDay();
+            
+            for (i = 0; i < 5; i++) {
+                if (i == 0) {
+                    today_num[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i) + "(오늘)";
+                }
+                else {
+                    today_num[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i);
+
+                }
+              
+            }
+
+
+        }
+        
+    </script>
+</head>
+<body onload="showImage()">
+    <header>
+        <p> <a href="중간과제.html" style="text-decoration:none;" target="_top">Ⓢ SUNNY CINEMA</a></p>
+        <table class="tb1">
+            <th>
+                <a href="https://www.facebook.com/LotteCinema.kr" style="text-decoration:none;" target="_blank">❤ 좋아요</a>
+            </th>
+            <th>
+                <a href="https://www.youtube.com/channel/UCi4KivcV3a3yhkycFsjpalQ" style="text-decoration:none;" target="_blank">♡ 구독하기</a>
+
+            </th>
+        </table>
+        <hr />
+        <table>
+            <tbody>
+
+            <th>
+                예매
+            </th>
+            <th>
+                영화
+            </th>
+            <th>
+                영화관
+            </th>
+            <th>
+                이벤트
+            </th>
+            <th>
+                스토어
+            </th>
+            </tbody>
+        </table>
+        <table class="tb2">
+            <th>
+                ☺ 회원가입
+            </th>
+            <th>
+                ꍏ 바로예매
+            </th>
+        </table>
+        <table class="tb3">
+            <th>
+                <a href="https://www.lottecinema.co.kr/NLCHS/Mypage/MemberVipzone" style="text-decoration:none;" target="_top">멤버십</a>
+            </th>
+            <th>
+                <a href="https://www.lottecinema.co.kr/NLCHS/Customer" style="text-decoration:none;" target="_top">고객센터</a>
+            </th>
+            <th>
+                <a href="로그인_중간과제.html" style="text-decoration:none;" target="_top">로그인</a>
+
+            </th>
+        </table>
+        
+        
+    </header>
+    <section7>
+        <p>
+            </br>
+            스페셜관
+            <hr class="hr1" />
+            <table style=" border-spacing:20px;left:50%;margin-left:-50% ;color:white; text-align:center; font-weight:bolder" >
+                <tbody>
+
+                    <tr>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=300" target="_blank"><img src="스페셜관1.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=941" target="_blank"><img src="스페셜관2.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=980" target="_blank"><img src="스페셜관3.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=940" target="_blank"><img src="스페셜관4.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=930" target="_blank"><img src="스페셜관5.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=987" target="_blank"><img src="스페셜관6.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=200" target="_blank"><img src="스페셜관7.PNG" /></a></td>
+                        <td><a href="https://www.lottecinema.co.kr/NLCHS/Cinema/SpecialCinema?divisionCode=2&screendivcd=986" target="_blank"><img src="스페셜관8.PNG" /></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <br /><br /><br /><br />
+        <p>이벤트</p>
+        <table style=" border-spacing:10px;left:50%;margin-left:-50% ;color:white; text-align:center; font-weight:bolder">
+            <tbody>
+                <tr>
+                    <td><img src="광고1.PNG" /></td>
+                    <td><img src="광고2.PNG" /></td>
+                    <td><img src="광고3.PNG" /></td>
+                    <td rowspan="2"><img src="광고6.PNG"</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><img src="광고4.PNG" width="100%" height="100%" /></td>
+                    <td><img src="광고5.PNG" width="100%" height="100%" /></td>
+
+                </tr>
+            </tbody>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+        <p style="margin-top:550px;">Ⓢ SUNNY CINEMA<br /><br />공주대학교 201601883 홍범선 중간과제</p>
+        <br /><br />
+        <img src="상.PNG" width="100%" style="margin-left:-430px" />
+
+    </section7>
+    <section6 class="section">
+        <table style="border-spacing:20px; width:1000px; left:50%;margin-left:-530px;color:white; text-align:center; font-weight:bolder; position:absolute;table-layout: fixed;" >
+            <tbody>
+                <tr>
+                    <td id="t1" style="border-radius:20px; width:185px; height:265px;background-repeat:no-repeat; background-size:185px 265px;" onmouseover="mouseon(1)" onmouseleave="mouseout(1)" ></td>
+                    <td id="t2" style="border-radius:20px; width:185px; height:265px;background-repeat:no-repeat;background-size:185px 265px;" onmouseover="mouseon(2)"  onmouseleave="mouseout(2)" ><img id="td_img2" style="margin:0px;padding:0px;border-collapse:collapse;display:block;" /></td>
+                    <td id="t3" style="border-radius:20px; width:185px; height:265px;background-repeat:no-repeat;background-size:185px 265px;" onmouseover="mouseon(3)"  onmouseleave="mouseout(3)"><img id="td_img3" style="margin:0px;padding:0px;border-collapse:collapse;display:block;" /></td>
+                    <td id="t4" style="border-radius:20px; width:185px;height:265px;background-repeat:no-repeat;background-size:185px 265px;" onmouseover="mouseon(4)"  onmouseleave="mouseout(4)"><img id="td_img4" style="margin:0px;padding:0px;border-collapse:collapse;display:block;" /></td>
+                    <td id="t5" style="border-radius:20px; width:185px; height:265px;background-repeat:no-repeat;background-size:185px 265px;" onmouseover="mouseon(5)"  onmouseleave="mouseout(5)"><img id="td_img5" style="margin:0px;padding:0px;border-collapse:collapse;display:block;" /></td>
+                    
+                </tr>
+                <tr>
+                    <td ><span id="t1_1"></span><br /> <span id="rank1">예매율</span><br/><span class="today"></span></td>
+                    <td><span id="t1_2"></span><br /> <span id="rank2">예매율</span><br /><span class="today"></span></td>
+                    <td><span id="t1_3"></span><br /> <span id="rank3">예매율</span><br /><span class="today"></span></td>
+                    <td><span id="t1_4"></span><br /> <span id="rank4">예매율</span><br /><span class="today"></span></td>
+                    <td><span id="t1_5"></span><br /> <span id="rank5">예매율</span><br /><span class="today"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section6>
+    <section1>
+
+
+    </section1>
+    <section2>
+
+    </section2>
+
+    <section3>
+
+    </section3>
+    <section4>
+
+    </section4>
+    <section5>
+
+    </section5>
+
+
+
+    <section id="img">
+        <label class="left" onclick="ch_bg1()"></label>
+        <label class="right" onclick="ch_bg()"></label>
+        <label class="play" onclick="show_dia()"></label>
+
+    </section>
+    
+    <a href="#" onclick="window.open ('http://www.naver.com,','cong_window','toolbar=0, location=0, status=0, menubar=0, scrollbars=0, resizable=0, top=0, left=0, width=1014, height=700')" onfocus='this.blur()' target="_self">이동!</a>
+    <dialog id="play" style="height:550px;width:950px;border-radius:20px;">
+        <video id="vi" src="리틀.mp4" style="width:950px;height:550px;outline:none;" controls></video>
+        <label class="close" onclick="dia_close()"></label>
+    </dialog>
+
+
+
+</body>
+</html>

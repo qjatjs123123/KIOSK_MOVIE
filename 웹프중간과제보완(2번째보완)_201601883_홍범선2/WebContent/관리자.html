@@ -1,0 +1,1683 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .one{
+            width:35px; height:18px;
+        }
+        .two{
+            width:35px; height:18px;
+        }
+        .three{
+            width:35px; height:18px;
+        }
+        .four{
+            width:35px; height:18px;
+        }
+        .five{
+            width:35px; height:18px;
+        }
+
+
+    </style>
+    <script>
+            var SEOUL1 = new Array();
+            var SEOUL2 = new Array();
+            var SEOUL3 = new Array();
+            var SEOUL4 = new Array();
+            var SEOUL5 = new Array();
+            var SEOUL6 = new Array();
+
+            var GIDO1 = new Array();
+            var GIDO2 = new Array();
+            var GIDO3 = new Array();
+            var GIDO4 = new Array();
+            var GIDO5 = new Array();
+            var GIDO6 = new Array();
+            var CHEONG1 = new Array();
+            var CHEONG2 = new Array();
+            var CHEONG3 = new Array();
+            var CHEONG4 = new Array();
+            var CHEONG5 = new Array();
+            var CHEONG6 = new Array();
+            var LADO1 = new Array();
+            var LADO2 = new Array();
+            var LADO3 = new Array();
+            var LADO4 = new Array();
+            var LADO5 = new Array();
+            var LADO6 = new Array();
+            var SANG1 = new Array();
+            var SANG2 = new Array();
+            var SANG3 = new Array();
+            var SANG4 = new Array();
+            var SANG5 = new Array();
+            var SANG6 = new Array();
+
+            var WON1 = new Array();
+            var WON2 = new Array();
+            var WON3 = new Array();
+            var WON4 = new Array();
+            var WON5 = new Array();
+            var WON6 = new Array();
+            var mov_array = new Array();
+            var array1_1 = new Array();
+            var array1_2 = new Array();
+            var array1_3 = new Array();
+            var array1_4 = new Array();
+            var array1_5 = new Array();
+            var array1_6 = new Array();
+            var value2 = new Array();
+            var date_num = 0;
+            var storedStorage2 = new Array();
+        function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"원";
+        }
+
+
+ 
+        function start() {
+            var today1_movie1 = document.getElementsByClassName('one');
+            var date_movie = document.getElementsByClassName('date_movie');
+            var movie1 = document.getElementsByClassName('movie1');
+            var all_total = document.getElementById('all_total');
+            var t1 = document.getElementsByClassName('t1');
+            var p1 = document.getElementById('price1');
+            var p2 = document.getElementById('price2');
+            var p3 = document.getElementById('price3');
+            var p4 = document.getElementById('price4');
+            var p5 = document.getElementById('price5');
+            var p6 = document.getElementById('price6');
+
+            
+            
+            
+            var array_dt = document.getElementById('dt1');
+            var array_dt1 = document.getElementById('dt2');
+            var array_dt2 = document.getElementById('dt3');
+            var array_dt3 = document.getElementById('dt4');
+            var array_dt4 = document.getElementById('dt5');
+            var array_dt5 = document.getElementById('dt6');
+
+            
+            
+
+            txt = document.getElementById('txt');
+            txt1 = document.getElementById('txt1');
+            txt1_1 = localStorage.getItem('txt');
+            storedStorage4 = JSON.parse(txt1_1);
+            array_txt1 = new Array();
+            for (i = 0; i < storedStorage4.length; i++) {
+                var opt1 = document.createElement('option');
+                array_txt1[i] = storedStorage4[i];
+                opt1.innerText = array_txt1[i];
+                array_dt.appendChild(opt1);            
+                          
+            }
+            for (i = 0; i < storedStorage4.length; i++) {
+                var opt1 = document.createElement('option');
+                array_txt1[i] = storedStorage4[i];
+                opt1.innerText = array_txt1[i];
+                array_dt1.appendChild(opt1);            
+                          
+            }
+            for (i = 0; i < storedStorage4.length; i++) {
+                var opt1 = document.createElement('option');
+                array_txt1[i] = storedStorage4[i];
+                opt1.innerText = array_txt1[i];
+                array_dt2.appendChild(opt1);            
+                          
+            }
+            for (i = 0; i < storedStorage4.length; i++) {
+                var opt1 = document.createElement('option');
+                array_txt1[i] = storedStorage4[i];
+                opt1.innerText = array_txt1[i];
+                array_dt3.appendChild(opt1);            
+                          
+            }
+            for (i = 0; i < storedStorage4.length; i++) {
+                var opt1 = document.createElement('option');
+                array_txt1[i] = storedStorage4[i];
+                opt1.innerText = array_txt1[i];
+                array_dt4.appendChild(opt1);            
+                          
+            }
+            for (i = 0; i < storedStorage4.length; i++) {
+                var opt1 = document.createElement('option');
+                array_txt1[i] = storedStorage4[i];
+                opt1.innerText = array_txt1[i];
+                array_dt5.appendChild(opt1);            
+                          
+            }
+                
+            value2[0] = localStorage.getItem('today1_movie1');
+            value2[1] = localStorage.getItem('today2_movie1');
+            value2[2] = localStorage.getItem('today3_movie1');
+            value2[3] = localStorage.getItem('today4_movie1');
+            value2[4] = localStorage.getItem('today5_movie1');
+            value2[5] = localStorage.getItem('today6_movie1');
+            storedStorage20 = JSON.parse(value2[0]);
+            storedStorage21 = JSON.parse(value2[1]);
+            storedStorage22 = JSON.parse(value2[2]);
+            storedStorage23 = JSON.parse(value2[3]);
+            storedStorage24 = JSON.parse(value2[4]);
+            storedStorage25 = JSON.parse(value2[5]);
+            txt = document.getElementById('txt');
+            txt1_1 = localStorage.getItem('txt');
+            txt1 = document.getElementById('txt1');
+            array_txt = new Array();
+            storedStorage3 = JSON.parse(txt1_1);
+            str = "";
+            j = 0;
+            for (i = 0; i < storedStorage3.length; i++) {
+                array_txt[i] = storedStorage3[i];
+                j++;
+            }
+            
+            localStorage.setItem('txt', JSON.stringify(array_txt));
+            for (i = 0; i < j; i++) {
+                txt1.innerHTML = str+"["+array_txt[i]+"]";
+                str += "["+array_txt[i]+"] "
+            }
+
+            
+            
+            var value1 = localStorage.getItem('mov_array');
+            var storedStorage1 = JSON.parse(value1);
+            start_area();
+            
+            for (i = 0; i < 6; i++) {
+                mov_array[i] = storedStorage1[i];
+                array1_1[i] = storedStorage20[i];
+                array1_2[i] = storedStorage21[i];
+                array1_3[i] = storedStorage22[i];
+                array1_4[i] = storedStorage23[i];
+                array1_5[i] = storedStorage24[i];
+                array1_6[i] = storedStorage25[i];
+                
+            }
+
+            var dt1 = document.getElementById('dt1');
+            var dt2 = document.getElementById('dt2');
+            var dt3 = document.getElementById('dt3');
+            var dt4 = document.getElementById('dt4');
+            var dt5 = document.getElementById('dt5');
+            var dt6 = document.getElementById('dt6');
+            txt1_1 = localStorage.getItem('txt');          
+            array_txt = new Array();
+            storedStorage3 = JSON.parse(txt1_1);
+            str = "";
+            var j = 0;
+            for (i = 0; i < storedStorage3.length; i++) {
+                array_txt[i] = storedStorage3[i];
+            }
+            
+            
+            
+                for (j = 0; j < storedStorage3.length; j++) {
+                    if (mov_array[0] == dt1.children[j].value) {
+                        dt1.children[j].selected = true;
+                        
+                        
+                    }
+                    if (mov_array[1] == dt2.children[j].value) {
+                        dt2.children[j].selected = true;
+                        
+                        
+                    }
+                    if (mov_array[2] == dt3.children[j].value) {
+                        dt3.children[j].selected = true;
+                        
+                        
+                    }
+                    if (mov_array[3] == dt4.children[j].value) {
+                        dt4.children[j].selected = true;
+                        
+                        
+                    }
+                    if (mov_array[4] == dt5.children[j].value) {
+                        dt5.children[j].selected = true;
+                        
+                        
+                    }
+                    if (mov_array[5] == dt6.children[j].value) {
+                        dt6.children[j].selected = true;
+                        
+                        
+                    }
+
+                }
+      
+            
+             
+       
+            
+            t2 = document.getElementsByClassName('t2');
+            today_num = document.getElementsByClassName('today');
+            date = new Date();
+            week = new Array('일', '월', '화', '수', '목', '금', '토');
+            today = date.getDay();
+            date1 = document.getElementById('date1');
+            date1.innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "(" + week[today] + ")";
+            for (i = 0; i < 6; i++) {
+                if (i == 0) {
+                    today_num[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i) + "(오늘)";
+                    t1[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i) + "(오늘)";
+                    date_movie[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i) + "(오늘)";
+                    t2[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i) + "(오늘)";
+
+                }
+                else {
+                    today_num[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i);
+                    t1[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i);
+                    date_movie[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i);
+                    t2[i].innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + i);
+                }
+                movie1[i].innerHTML = "제목 : " + mov_array[i];
+            }
+
+
+            p1.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total1'))); 
+            p2.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total2'))); 
+            p3.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total3'))); 
+            p4.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total4'))); 
+            p5.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total5'))); 
+            p6.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total6')));
+            all_total.innerHTML = numberWithCommas(parseInt(localStorage.getItem('t_total1')) + parseInt(localStorage.getItem('t_total2')) + parseInt(localStorage.getItem('t_total3')) + parseInt(localStorage.getItem('t_total4')) + parseInt(localStorage.getItem('t_total5')) + parseInt(localStorage.getItem('t_total6')))
+            changedate(1);
+        }
+
+        function choose_date(num, str) {
+            var movie1 = document.getElementsByClassName('movie1');
+            mov_array[num] = str;
+            localStorage.removeItem('mov_array');
+            localStorage.setItem('mov_array', JSON.stringify(mov_array));
+            movie1[num].innerHTML = "제목 : " +  str;
+        }
+        function changedate(num) {
+            today = document.getElementsByClassName('one');
+            main_name = document.getElementById('main_name');
+            if (num == 1) {
+                date_num = 1;
+                for (i = 0; i < 6; i++) {
+                    today[i].value = array1_1[i];
+                }
+                main_name.innerHTML = mov_array[num - 1];
+            
+            }
+            else if (num == 2) {
+                date_num = 2;
+                for (i = 0; i < 6; i++) {
+                    today[i].value = array1_2[i];
+                }
+                main_name.innerHTML = mov_array[num - 1];
+            
+            }
+            else if (num == 3) {
+                date_num = 3;
+                for (i = 0; i < 6; i++) {
+                    today[i].value = array1_3[i];
+                }
+                main_name.innerHTML = mov_array[num - 1];
+            
+            }
+            else if (num == 4) {
+                date_num = 4;
+                for (i = 0; i < 6; i++) {
+                    today[i].value = array1_4[i];
+                }
+                main_name.innerHTML = mov_array[num - 1];
+            
+            }
+            else if (num == 5) {
+                date_num = 5;
+                for (i = 0; i < 6; i++) {
+                    today[i].value = array1_5[i];
+                }
+                main_name.innerHTML = mov_array[num - 1];
+            
+            }
+            else if (num == 6) {
+                date_num = 6;
+                for (i = 0; i < 6; i++) {
+                    today[i].value = array1_6[i];
+                }
+                main_name.innerHTML = mov_array[num - 1];
+            }
+            
+
+        }
+        function btn(num) {
+            text1 = document.getElementById('today1_movie1').value;
+            text2 = document.getElementById('today2_movie1').value;
+            text3 = document.getElementById('today3_movie1').value;
+            text4 = document.getElementById('today4_movie1').value;
+            text5 = document.getElementById('today5_movie1').value;
+            text6 = document.getElementById('today6_movie1').value;
+            
+            var num1 = text1.search(/[0-9]/g);
+            var num2 = text2.search(/[0-9]/g);
+            var num3 = text3.search(/[0-9]/g);
+            var num4 = text4.search(/[0-9]/g);
+            var num5 = text5.search(/[0-9]/g);
+            var num6 = text6.search(/[0-9]/g);
+            /*1번째*/
+            if (date_num == 1) {
+                if (num == 0) {
+                if (num1 == -1 || text1.indexOf(":") == -1 || text1.length != 5) {                   
+                    if (text1.indexOf("X") != -1 && text1.length == 1) {
+                        array1_1[num] = text1;
+                        localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_1[num] = text1;
+                    localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                }                              
+            }
+
+            else if (num == 1) {
+                if (num2 == -1 || text2.indexOf(":") == -1 || text2.length != 5) {
+                   if (text2.indexOf("X") != -1 && text2.length == 1) {
+                        array1_1[num] = text2;
+                        localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_1[num] = text2;
+                    localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                }                              
+            }
+
+            else if (num == 2) {
+                if (num3 == -1 || text3.indexOf(":") == -1 || text3.length != 5) {
+                   if (text3.indexOf("X") != -1 && text3.length == 1) {
+                        array1_1[num] = text3;
+                        localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_1[num] = text3;
+                    localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                }                              
+            }
+
+            else if (num == 3) {
+                if (num4 == -1 || text4.indexOf(":") == -1 || text4.length != 5) {
+                   if (text4.indexOf("X") != -1 && text4.length == 1) {
+                        array1_1[num] = text4;
+                        localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_1[num] = text4;
+                    localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                }
+               
+            }
+
+            else if (num == 4) {
+                if (num5 == -1 || text5.indexOf(":") == -1 || text5.length != 5) {
+                   if (text5.indexOf("X") != -1 && text5.length == 1) {
+                        array1_1[num] = text5;
+                        localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_1[num] = text5;
+                    localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                }                              
+            }
+
+
+            else if (num == 5) {
+                if (num6 == -1 || text6.indexOf(":") == -1 || text6.length != 5) {
+                   if (text6.indexOf("X") != -1 && text6.length == 1) {
+                        array1_1[num] = text6;
+                        localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_1[num] = text6;
+                    localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+                }                              
+            }
+
+            }
+            /*2번째*/
+            if (date_num == 2) {
+                if (num == 0) {
+                if (num1 == -1 || text1.indexOf(":") == -1 || text1.length != 5) {                   
+                    if (text1.indexOf("X") != -1 && text1.length == 1) {
+                        array1_2[num] = text1;
+                        localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_2[num] = text1;
+                    localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                }                              
+            }
+
+            else if (num == 1) {
+                if (num2 == -1 || text2.indexOf(":") == -1 || text2.length != 5) {
+                   if (text2.indexOf("X") != -1 && text2.length == 1) {
+                        array1_2[num] = text2;
+                        localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_2[num] = text2;
+                    localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                }                              
+            }
+
+            else if (num == 2) {
+                if (num3 == -1 || text3.indexOf(":") == -1 || text3.length != 5) {
+                   if (text3.indexOf("X") != -1 && text3.length == 1) {
+                        array1_2[num] = text3;
+                        localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_2[num] = text3;
+                    localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                }                              
+            }
+
+            else if (num == 3) {
+                if (num4 == -1 || text4.indexOf(":") == -1 || text4.length != 5) {
+                   if (text4.indexOf("X") != -1 && text4.length == 1) {
+                        array1_2[num] = text4;
+                        localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_2[num] = text4;
+                    localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                }
+               
+            }
+
+            else if (num == 4) {
+                if (num5 == -1 || text5.indexOf(":") == -1 || text5.length != 5) {
+                   if (text5.indexOf("X") != -1 && text5.length == 1) {
+                        array1_2[num] = text5;
+                        localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_2[num] = text5;
+                    localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                }                              
+            }
+
+
+            else if (num == 5) {
+                if (num6 == -1 || text6.indexOf(":") == -1 || text6.length != 5) {
+                   if (text6.indexOf("X") != -1 && text6.length == 1) {
+                        array1_2[num] = text6;
+                        localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_2[num] = text6;
+                    localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+                }                              
+            }
+
+            }
+            /*3번째*/
+            if (date_num == 3) {
+                if (num == 0) {
+                if (num1 == -1 || text1.indexOf(":") == -1 || text1.length != 5) {                   
+                    if (text1.indexOf("X") != -1 && text1.length == 1) {
+                        array1_3[num] = text1;
+                        localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_3[num] = text1;
+                    localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                }                              
+            }
+
+            else if (num == 1) {
+                if (num2 == -1 || text2.indexOf(":") == -1 || text2.length != 5) {
+                   if (text2.indexOf("X") != -1 && text2.length == 1) {
+                        array1_3[num] = text2;
+                        localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_3[num] = text2;
+                    localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                }                              
+            }
+
+            else if (num == 2) {
+                if (num3 == -1 || text3.indexOf(":") == -1 || text3.length != 5) {
+                   if (text3.indexOf("X") != -1 && text3.length == 1) {
+                        array1_3[num] = text3;
+                        localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_3[num] = text3;
+                    localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                }                              
+            }
+
+            else if (num == 3) {
+                if (num4 == -1 || text4.indexOf(":") == -1 || text4.length != 5) {
+                   if (text4.indexOf("X") != -1 && text4.length == 1) {
+                        array1_3[num] = text4;
+                        localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_3[num] = text4;
+                    localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                }
+               
+            }
+
+            else if (num == 4) {
+                if (num5 == -1 || text5.indexOf(":") == -1 || text5.length != 5) {
+                   if (text5.indexOf("X") != -1 && text5.length == 1) {
+                        array1_3[num] = text5;
+                        localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_3[num] = text5;
+                    localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                }                              
+            }
+
+
+            else if (num == 5) {
+                if (num6 == -1 || text6.indexOf(":") == -1 || text6.length != 5) {
+                   if (text6.indexOf("X") != -1 && text6.length == 1) {
+                        array1_3[num] = text6;
+                        localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_3[num] = text6;
+                    localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+                }                              
+            }
+
+            }
+            /*4번쨰*/
+             if (date_num == 4) {
+                if (num == 0) {
+                if (num1 == -1 || text1.indexOf(":") == -1 || text1.length != 5) {                   
+                    if (text1.indexOf("X") != -1 && text1.length == 1) {
+                        array1_4[num] = text1;
+                        localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_4[num] = text1;
+                    localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                }                              
+            }
+
+            else if (num == 1) {
+                if (num2 == -1 || text2.indexOf(":") == -1 || text2.length != 5) {
+                   if (text2.indexOf("X") != -1 && text2.length == 1) {
+                        array1_4[num] = text2;
+                        localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_4[num] = text2;
+                    localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                }                              
+            }
+
+            else if (num == 2) {
+                if (num3 == -1 || text3.indexOf(":") == -1 || text3.length != 5) {
+                   if (text3.indexOf("X") != -1 && text3.length == 1) {
+                        array1_4[num] = text3;
+                        localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_4[num] = text3;
+                    localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                }                              
+            }
+
+            else if (num == 3) {
+                if (num4 == -1 || text4.indexOf(":") == -1 || text4.length != 5) {
+                   if (text4.indexOf("X") != -1 && text4.length == 1) {
+                        array1_4[num] = text4;
+                        localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_4[num] = text4;
+                    localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                }
+               
+            }
+
+            else if (num == 4) {
+                if (num5 == -1 || text5.indexOf(":") == -1 || text5.length != 5) {
+                   if (text5.indexOf("X") != -1 && text5.length == 1) {
+                        array1_4[num] = text5;
+                        localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_4[num] = text5;
+                    localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                }                              
+            }
+
+
+            else if (num == 5) {
+                if (num6 == -1 || text6.indexOf(":") == -1 || text6.length != 5) {
+                   if (text6.indexOf("X") != -1 && text6.length == 1) {
+                        array1_4[num] = text6;
+                        localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_4[num] = text6;
+                    localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+                }                              
+            }
+
+            }
+            /*5번째*/
+             if (date_num == 5) {
+                if (num == 0) {
+                if (num1 == -1 || text1.indexOf(":") == -1 || text1.length != 5) {                   
+                    if (text1.indexOf("X") != -1 && text1.length == 1) {
+                        array1_5[num] = text1;
+                        localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_5[num] = text1;
+                    localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                }                              
+            }
+
+            else if (num == 1) {
+                if (num2 == -1 || text2.indexOf(":") == -1 || text2.length != 5) {
+                   if (text2.indexOf("X") != -1 && text2.length == 1) {
+                        array1_5[num] = text2;
+                        localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_5[num] = text2;
+                    localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                }                              
+            }
+
+            else if (num == 2) {
+                if (num3 == -1 || text3.indexOf(":") == -1 || text3.length != 5) {
+                   if (text3.indexOf("X") != -1 && text3.length == 1) {
+                        array1_5[num] = text3;
+                        localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_5[num] = text3;
+                    localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                }                              
+            }
+
+            else if (num == 3) {
+                if (num4 == -1 || text4.indexOf(":") == -1 || text4.length != 5) {
+                   if (text4.indexOf("X") != -1 && text4.length == 1) {
+                        array1_5[num] = text4;
+                        localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_5[num] = text4;
+                    localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                }
+               
+            }
+
+            else if (num == 4) {
+                if (num5 == -1 || text5.indexOf(":") == -1 || text5.length != 5) {
+                   if (text5.indexOf("X") != -1 && text5.length == 1) {
+                        array1_5[num] = text5;
+                        localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_5[num] = text5;
+                    localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                }                              
+            }
+
+
+            else if (num == 5) {
+                if (num6 == -1 || text6.indexOf(":") == -1 || text6.length != 5) {
+                   if (text6.indexOf("X") != -1 && text6.length == 1) {
+                        array1_5[num] = text6;
+                        localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_5[num] = text6;
+                    localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+                }                              
+            }
+
+            }
+            /*6번째*/
+             if (date_num == 6) {
+                if (num == 0) {
+                if (num1 == -1 || text1.indexOf(":") == -1 || text1.length != 5) {                   
+                    if (text1.indexOf("X") != -1 && text1.length == 1) {
+                        array1_6[num] = text1;
+                        localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_6[num] = text1;
+                    localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                }                              
+            }
+
+            else if (num == 1) {
+                if (num2 == -1 || text2.indexOf(":") == -1 || text2.length != 5) {
+                   if (text2.indexOf("X") != -1 && text2.length == 1) {
+                        array1_6[num] = text2;
+                        localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_6[num] = text2;
+                    localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                }                              
+            }
+
+            else if (num == 2) {
+                if (num3 == -1 || text3.indexOf(":") == -1 || text3.length != 5) {
+                   if (text3.indexOf("X") != -1 && text3.length == 1) {
+                        array1_6[num] = text3;
+                        localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_6[num] = text3;
+                    localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                }                              
+            }
+
+            else if (num == 3) {
+                if (num4 == -1 || text4.indexOf(":") == -1 || text4.length != 5) {
+                   if (text4.indexOf("X") != -1 && text4.length == 1) {
+                        array1_6[num] = text4;
+                        localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_6[num] = text4;
+                    localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                }
+               
+            }
+
+            else if (num == 4) {
+                if (num5 == -1 || text5.indexOf(":") == -1 || text5.length != 5) {
+                   if (text5.indexOf("X") != -1 && text5.length == 1) {
+                        array1_6[num] = text5;
+                        localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_6[num] = text5;
+                    localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                }                              
+            }
+
+
+            else if (num == 5) {
+                if (num6 == -1 || text6.indexOf(":") == -1 || text6.length != 5) {
+                   if (text6.indexOf("X") != -1 && text6.length == 1) {
+                        array1_6[num] = text6;
+                        localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                    }
+                    else {
+                        alert("날짜 형식에 맞게 다시 입력해주세요");
+                    }
+                }
+                else {
+                    
+                    array1_6[num] = text6;
+                    localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+                }                              
+            }
+
+            }
+        }
+        function btn3() {
+            location.href = "중간과제.html";
+        }
+
+        function btn1(num) {
+           
+
+            SEOUL1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SEOUL6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            GIDO1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            GIDO6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            CHEONG1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            CHEONG6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            LADO1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            LADO6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
+            SANG1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            SANG6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
+            WON1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            WON6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            if (num == 1) {
+                localStorage.setItem("SEOUL1", JSON.stringify(SEOUL1));
+                localStorage.setItem("SEOUL2", JSON.stringify(SEOUL2));
+                localStorage.setItem("SEOUL3", JSON.stringify(SEOUL3));
+                localStorage.setItem("SEOUL4", JSON.stringify(SEOUL4));
+                localStorage.setItem("SEOUL5", JSON.stringify(SEOUL5));
+                localStorage.setItem("SEOUL6", JSON.stringify(SEOUL6));
+                alert("초기화 되었습니다.");
+            }
+
+            else if (num == 2) {
+                localStorage.setItem("GIDO1", JSON.stringify(GIDO1));
+                localStorage.setItem("GIDO2", JSON.stringify(GIDO2));
+                localStorage.setItem("GIDO3", JSON.stringify(GIDO3));
+                localStorage.setItem("GIDO4", JSON.stringify(GIDO4));
+                localStorage.setItem("GIDO5", JSON.stringify(GIDO5));
+                localStorage.setItem("GIDO6", JSON.stringify(GIDO6));
+                alert("초기화 되었습니다.");
+            }
+
+            else if (num == 3) {
+                localStorage.setItem("CHEONG1", JSON.stringify(CHEONG1));
+                localStorage.setItem("CHEONG2", JSON.stringify(CHEONG2));
+                localStorage.setItem("CHEONG3", JSON.stringify(CHEONG3));
+                localStorage.setItem("CHEONG4", JSON.stringify(CHEONG4));
+                localStorage.setItem("CHEONG5", JSON.stringify(CHEONG5));
+                localStorage.setItem("CHEONG6", JSON.stringify(CHEONG6));
+                alert("초기화 되었습니다.");
+            }
+
+            else if (num == 4) {
+                localStorage.setItem("LADO1", JSON.stringify(LADO1));
+                localStorage.setItem("LADO2", JSON.stringify(LADO2));
+                localStorage.setItem("LADO3", JSON.stringify(LADO3));
+                localStorage.setItem("LADO4", JSON.stringify(LADO4));
+                localStorage.setItem("LADO5", JSON.stringify(LADO5));
+                localStorage.setItem("LADO6", JSON.stringify(LADO6));
+                alert("초기화 되었습니다.");
+            }
+
+            else if (num == 5) {
+                localStorage.setItem("SANG1", JSON.stringify(SANG1));
+                localStorage.setItem("SANG2", JSON.stringify(SANG2));
+                localStorage.setItem("SANG3", JSON.stringify(SANG3));
+                localStorage.setItem("SANG4", JSON.stringify(SANG4));
+                localStorage.setItem("SANG5", JSON.stringify(SANG5));
+                localStorage.setItem("SANG6", JSON.stringify(SANG6));
+                alert("초기화 되었습니다.");
+                
+
+            }
+
+            else if (num == 6) {
+                localStorage.setItem("WON1", JSON.stringify(WON1));
+                localStorage.setItem("WON2", JSON.stringify(WON2));
+                localStorage.setItem("WON3", JSON.stringify(WON3));
+                localStorage.setItem("WON4", JSON.stringify(WON4));
+                localStorage.setItem("WON5", JSON.stringify(WON5));
+                localStorage.setItem("WON6", JSON.stringify(WON6));
+                alert("초기화 되었습니다.");
+            }
+
+        }
+        function btn2() {
+            GIDO1 = localStorage.getItem('GIDO1');
+            GIDO2 = localStorage.getItem('GIDO2');
+            GIDO3 = localStorage.getItem('GIDO3');
+            GIDO4 = localStorage.getItem('GIDO4');
+            GIDO5 = localStorage.getItem('GIDO5');
+            GIDO6 = localStorage.getItem('GIDO6');
+
+            CHEONG1 = localStorage.getItem('CHEONG1');
+            CHEONG2 = localStorage.getItem('CHEONG2');
+            CHEONG3 = localStorage.getItem('CHEONG3');
+            CHEONG4 = localStorage.getItem('CHEONG4');
+            CHEONG5 = localStorage.getItem('CHEONG5');
+            CHEONG6 = localStorage.getItem('CHEONG6');
+
+            LADO1 = localStorage.getItem('LADO1');
+            LADO2 = localStorage.getItem('LADO2');
+            LADO3 = localStorage.getItem('LADO3');
+            LADO4 = localStorage.getItem('LADO4');
+            LADO5 = localStorage.getItem('LADO5');
+            LADO6 = localStorage.getItem('LADO6');
+
+            SANG1 = localStorage.getItem('SANG1');
+            SANG2 = localStorage.getItem('SANG2');
+            SANG3 = localStorage.getItem('SANG3');
+            SANG4 = localStorage.getItem('SANG4');
+            SANG5 = localStorage.getItem('SANG5');
+            SANG6 = localStorage.getItem('SANG6');
+
+            WON1 = localStorage.getItem('WON1');
+            WON2 = localStorage.getItem('WON2');
+            WON3 = localStorage.getItem('WON3');
+            WON4 = localStorage.getItem('WON4');
+            WON5 = localStorage.getItem('WON5');
+            WON6 = localStorage.getItem('WON6');
+            
+
+            
+            mov_array_1 = new Array();
+            for (i = 0; i < 6; i++) {
+                if (i == 5) {
+                    mov_array_1[i] = "NULL";
+                }
+                else {
+                    mov_array_1[i] = mov_array[i + 1];
+                }
+            }
+            localStorage.setItem('mov_array', JSON.stringify(mov_array_1));
+
+            localStorage.setItem('SEOUL1',GIDO1);
+            localStorage.setItem('SEOUL2', GIDO2);
+            localStorage.setItem('SEOUL3', GIDO3);
+            localStorage.setItem('SEOUL4', GIDO4);
+            localStorage.setItem('SEOUL5', GIDO5);
+            localStorage.setItem('SEOUL6', GIDO6);
+
+            localStorage.setItem('GIDO1', CHEONG1);
+            localStorage.setItem('GIDO2', CHEONG2);
+            localStorage.setItem('GIDO3', CHEONG3);
+            localStorage.setItem('GIDO4', CHEONG4);
+            localStorage.setItem('GIDO5', CHEONG5);
+            localStorage.setItem('GIDO6', CHEONG6);
+
+            localStorage.setItem('CHEONG1', LADO1);
+            localStorage.setItem('CHEONG2', LADO2);
+            localStorage.setItem('CHEONG3', LADO3);
+            localStorage.setItem('CHEONG4', LADO4);
+            localStorage.setItem('CHEONG5', LADO5);
+            localStorage.setItem('CHEONG6', LADO6);
+
+            localStorage.setItem('LADO1', SANG1);
+            localStorage.setItem('LADO2', SANG2);
+            localStorage.setItem('LADO3', SANG3);
+            localStorage.setItem('LADO4', SANG4);
+            localStorage.setItem('LADO5', SANG5);
+            localStorage.setItem('LADO6', SANG6);
+
+            localStorage.setItem('SANG1', WON1);
+            localStorage.setItem('SANG2', WON2);
+            localStorage.setItem('SANG3', WON3);
+            localStorage.setItem('SANG4', WON4);
+            localStorage.setItem('SANG5', WON5);
+            localStorage.setItem('SANG6', WON6);
+            array1_1 = array1_2;
+            array1_2 = array1_3;
+            array1_3 = array1_4;
+            array1_4 = array1_5;
+            array1_5 = array1_6;
+            array1_6 = ["X", "X", "X", "X", "X", "X"];
+            localStorage.setItem('today1_movie1', JSON.stringify(array1_1));
+            localStorage.setItem('today2_movie1', JSON.stringify(array1_2));
+            localStorage.setItem('today3_movie1', JSON.stringify(array1_3));
+            localStorage.setItem('today4_movie1', JSON.stringify(array1_4));
+            localStorage.setItem('today5_movie1', JSON.stringify(array1_5));
+            localStorage.setItem('today6_movie1', JSON.stringify(array1_6));
+            localStorage.setItem('t_total1', localStorage.getItem('t_total2'));
+            localStorage.setItem('t_total2', localStorage.getItem('t_total3'));
+            localStorage.setItem('t_total3', localStorage.getItem('t_total4'));
+            localStorage.setItem('t_total4', localStorage.getItem('t_total5'));
+            localStorage.setItem('t_total5', localStorage.getItem('t_total6'));
+            localStorage.setItem('t_total6', 0);
+
+            localStorage.setItem('file_name1', localStorage.getItem('file_name2'));
+            localStorage.setItem('file1_name1', localStorage.getItem('file1_name2'));
+            localStorage.setItem('file2_name11', localStorage.getItem('file2_name2'));
+
+            localStorage.setItem('file_name2', localStorage.getItem('file_name3'));
+            localStorage.setItem('file1_name2', localStorage.getItem('file1_name3'));
+            localStorage.setItem('file2_name2', localStorage.getItem('file2_name3'));
+
+            localStorage.setItem('file_name3', localStorage.getItem('file_name4'));
+            localStorage.setItem('file1_name3', localStorage.getItem('file1_name4'));
+            localStorage.setItem('file2_name3', localStorage.getItem('file2_name4'));
+
+            localStorage.setItem('file_name4', localStorage.getItem('file_name5'));
+            localStorage.setItem('file1_name4', localStorage.getItem('file1_name5'));
+            localStorage.setItem('file2_name4', localStorage.getItem('file2_name5'));
+
+            localStorage.setItem('file_name5', localStorage.getItem('file_name6'));
+            localStorage.setItem('file1_name5', localStorage.getItem('file1_name6'));
+            localStorage.setItem('file2_name5', localStorage.getItem('file2_name6'));
+
+            localStorage.setItem('file_name6', "");
+            localStorage.setItem('file1_name6', "");
+            localStorage.setItem('file2_name6',"" );
+            
+            localStorage.setItem('movie1', "0");
+            localStorage.setItem('movie2', "0");
+            localStorage.setItem('movie3', "0");
+            localStorage.setItem('movie4',"0");
+            localStorage.setItem('movie5',"0");
+
+
+
+            btn1(6);
+            
+
+            location.reload();
+        }
+        function start_area() {
+            a1 = document.getElementById('a1');
+            a2 = document.getElementById('a2');
+            a3 = document.getElementById('a3');
+            a4 = document.getElementById('a4');
+            a5 = document.getElementById('a5');
+
+              area = localStorage.getItem('ci_area');
+            
+            if (area == a1.value) {
+                
+                    a1.selected = true;
+                    
+                }
+                else if (area == a2.value) {
+                    a2.selected = true;
+                    
+                }
+                else if (area == a3.value) {
+                    a3.selected = true;
+                    
+                }
+                else if (area == a4.value) {
+                    a4.selected = true;
+                 
+                }
+                else if (area == a5.value) {
+
+                    a5.selected = true;
+                   
+               }
+        }
+        function change_area(str) {
+
+            area1 = str;
+            localStorage.setItem('ci_area', area1);
+
+        }
+        function z1() {
+            
+            file_name1 = document.getElementById('file_name1').files[0].name;
+            
+
+                    localStorage.setItem("file_name1", file_name1);
+   
+            
+        }
+        function insertval() {
+            txt = document.getElementById('txt');
+            txt1_1 = localStorage.getItem('txt');
+            txt1 = document.getElementById('txt1');
+            array_txt = new Array();
+            storedStorage3 = JSON.parse(txt1_1);
+            str = "";
+            var j = 0;
+            for (i = 0; i < storedStorage3.length; i++) {
+                array_txt[i] = storedStorage3[i];
+                j++;
+            }
+            array_txt[j] = txt.value;
+            localStorage.setItem('txt', JSON.stringify(array_txt));
+            for (i = 0; i < j+1; i++) {
+                txt1.innerHTML = str+"["+array_txt[i]+"]";
+                str += "["+array_txt[i]+"] "
+            }
+            var array_dt = document.getElementById('dt1');
+            var array_dt1 = document.getElementById('dt2');
+            var array_dt2 = document.getElementById('dt3');
+            var array_dt3 = document.getElementById('dt4');
+            var array_dt4 = document.getElementById('dt5');
+            var array_dt5 = document.getElementById('dt6');
+
+            storedStorage4 = JSON.parse(txt1_1);
+            
+            var opt1 = document.createElement('option');
+            array_txt1[i] = storedStorage4[i];
+            opt1.innerText = array_txt[j];
+            array_dt.appendChild(opt1);
+            array_dt1.appendChild(opt1);
+            array_dt2.appendChild(opt1);
+            array_dt3.appendChild(opt1);
+            array_dt4.appendChild(opt1);
+            array_dt5.appendChild(opt1);
+
+            location.reload();
+            txt.value = "";
+        }
+        function deleteval() {
+            txt1_1 = localStorage.getItem('txt');
+            storedStorage3 = JSON.parse(txt1_1);
+            array_txt = new Array();
+            for (i = 0; i < storedStorage3.length-1; i++) {
+                array_txt[i] = storedStorage3[i];
+            }
+            localStorage.setItem('txt', JSON.stringify(array_txt));
+            location.reload();
+        }
+        function z2(){
+            file_name2 = document.getElementById('file_name2').files[0].name;
+            
+
+                    localStorage.setItem("file_name2", file_name2);
+        }
+        function z3(){
+            file_name2 = document.getElementById('file_name3').files[0].name;
+            
+
+                    localStorage.setItem("file_name3", file_name2);
+        }
+        function z4(){
+            file_name2 = document.getElementById('file_name4').files[0].name;
+            
+
+                    localStorage.setItem("file_name4", file_name2);
+        }
+        function z5(){
+            file_name2 = document.getElementById('file_name5').files[0].name;
+            
+
+                    localStorage.setItem("file_name5", file_name2);
+        }
+        function z6(){
+            file_name2 = document.getElementById('file_name6').files[0].name;
+            
+
+                    localStorage.setItem("file_name6", file_name2);
+        }
+        function zz1(){
+            file_name2 = document.getElementById('file1_name1').files[0].name;
+            
+
+                    localStorage.setItem("file1_name1", file_name2);
+        }
+        function zz2(){
+            file_name2 = document.getElementById('file1_name2').files[0].name;
+            
+
+                    localStorage.setItem("file1_name2", file_name2);
+        }
+        function zz3(){
+            file_name2 = document.getElementById('file1_name3').files[0].name;
+            
+
+                    localStorage.setItem("file1_name3", file_name2);
+        }
+        function zz4(){
+            file_name2 = document.getElementById('file1_name4').files[0].name;
+            
+
+                    localStorage.setItem("file1_name4", file_name2);
+        }
+        function zz5(){
+            file_name2 = document.getElementById('file1_name5').files[0].name;
+            
+
+                    localStorage.setItem("file1_name5", file_name2);
+        }
+        function zz6(){
+            file_name2 = document.getElementById('file1_name6').files[0].name;
+            
+
+                    localStorage.setItem("file1_name6", file_name2);
+        }
+        function zzz1(){
+            file_name2 = document.getElementById('file2_name1').files[0].name;
+            
+
+                    localStorage.setItem("file2_name1", file_name2);
+        }
+        function zzz2(){
+            file_name2 = document.getElementById('file2_name2').files[0].name;
+            
+
+                    localStorage.setItem("file2_name2", file_name2);
+        }
+        function zzz3(){
+            file_name2 = document.getElementById('file2_name3').files[0].name;
+            
+
+                    localStorage.setItem("file2_name3", file_name2);
+        }
+        function zzz4(){
+            file_name2 = document.getElementById('file2_name4').files[0].name;
+            
+
+                    localStorage.setItem("file2_name4", file_name2);
+        }
+        function zzz5(){
+            file_name2 = document.getElementById('file2_name5').files[0].name;
+            
+
+                    localStorage.setItem("file2_name5", file_name2);
+        }
+        function zzz6(){
+            file_name2 = document.getElementById('file2_name6').files[0].name;
+            
+
+                    localStorage.setItem("file2_name6", file_name2);
+        }
+     
+
+    </script>
+</head>
+<body onload="start()">
+    <h1>관리자 모드</h1>
+    <br />
+
+
+
+
+    <br />
+
+
+
+    <label>지점을 선택해주세요</label>
+    <select name="area" onchange="change_area(this.value)">
+        <option value="서울/강남" id="a1">서울/강남</option>
+        <option value="서울/압구정" id="a2">서울/압구정</option>
+        <option value="서울/목동" id="a3">서울/목동</option>
+        <option value="서울/홍대" id="a4">서울/홍대</option>
+        <option value="서울/왕십리" id="a5">서울/왕십리</option>
+    </select>
+    <br /><br />
+    오늘 날짜 :  <span id="date1"></span>
+    <br /><br />
+
+    <label>상영하는 영화를 입력하세요 : </label> <input type="text" id="txt" style="height:20px;" /> <input type="button" id="txtbtn" value="입력" style="height:26px;" onclick="insertval()" /><br />
+    <label>입력된 영화 : </label> <span id="txt1"></span><input type="button" id="del_btn" value="삭제" style="height:26px;" onclick="deleteval()" /> 
+    <br /><br />
+    날짜별 영화 제목 :
+          <table style="border-collapse:collapse;">
+              <tr>
+                  <td style="border:1px solid; width:160px; text-align:center">날짜</td>
+                  <td style="border:1px solid; width:160px; text-align:center"><span class="date_movie"></span></td>
+                  <td style="border:1px solid; width:160px; text-align:center"><span class="date_movie"></span></td>
+                  <td style="border:1px solid; width:160px; text-align:center"><span class="date_movie"></span></td>
+                  <td style="border:1px solid; width:160px; text-align:center"><span class="date_movie"></span></td>
+                  <td style="border:1px solid; width:160px; text-align:center"><span class="date_movie"></span></td>
+                  <td style="border:1px solid; width:160px; text-align:center"><span class="date_movie"></span></td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid; width:160px; text-align:center">영화 제목</td>
+                  <td style="border:1px solid; width:160px; text-align:center" class="date_movie_tb">
+                      <span class="movie1"></span><br />선택 : <select name="date" id="dt1" onchange="choose_date(0,this.value)">
+                      </select>
+                  </td>
+                  <td style="border:1px solid; width:160px; text-align:center" class="date_movie_tb">
+                      <span class="movie1"></span><br />선택 : <select name="date" id="dt2" onchange="choose_date(1,this.value)">
+                      </select>
+                  </td>
+                  <td style="border:1px solid; width:160px; text-align:center" class="date_movie_tb">
+                      <span class="movie1"></span><br />선택 : <select name="date" id="dt3" onchange="choose_date(2,this.value)">
+                      </select>
+                  </td>
+                  <td style="border:1px solid; width:160px; text-align:center" class="date_movie_tb">
+                      <span class="movie1"></span><br />선택 : <select name="date" id="dt4" onchange="choose_date(3,this.value)">
+                      </select>
+                  </td>
+                  <td style="border:1px solid; width:160px; text-align:center" class="date_movie_tb">
+                      <span class="movie1"></span><br />선택 : <select name="date" id="dt5" onchange="choose_date(4,this.value)">
+                      </select>
+                  </td>
+                  <td style="border:1px solid; width:160px; text-align:center" class="date_movie_tb">
+                      <span class="movie1"></span><br />선택 : <select name="date" id="dt6" onchange="choose_date(5,this.value)">
+                      </select>
+                  </td>
+
+              </tr>
+              <tr>
+                  <td style="border:1px solid; width:160px; text-align:center">영화 포스터(메인)</td>
+                  <td style="width:160px">
+                      <input type="file" id="file_name1" name="uploadInput" style="float:left" onchange="z1()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file_name2" name="uploadInput" style="float:left" onchange="z2()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file_name3" name="uploadInput" style="float:left" onchange="z3()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file_name4" name="uploadInput" style="float:left" onchange="z4()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file_name5" name="uploadInput" style="float:left" onchange="z5()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file_name6" name="uploadInput" style="float:left" onchange="z6()">
+                  </td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid; width:160px; text-align:center">영화 포스터(small)</td>
+                  <td style="width:160px">
+                      <input type="file" id="file1_name1" name="uploadInput" style="float:left" onchange="zz1()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file1_name2" name="uploadInput" style="float:left" onchange="zz2()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file1_name3" name="uploadInput" style="float:left" onchange="zz3()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file1_name4" name="uploadInput" style="float:left" onchange="zz4()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file1_name5" name="uploadInput" style="float:left" onchange="zz5()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file1_name6" name="uploadInput" style="float:left" onchange="zz6()">
+                  </td>
+              </tr>
+              <tr>
+                  <td style="border:1px solid; width:160px; text-align:center">영화 예고편(메인)</td>
+                  <td style="width:160px">
+                      <input type="file" id="file2_name1" name="uploadInput" style="float:left" onchange="zzz1()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file2_name2" name="uploadInput" style="float:left" onchange="zzz2()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file2_name3" name="uploadInput" style="float:left" onchange="zzz3()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file2_name4" name="uploadInput" style="float:left" onchange="zzz4()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file2_name5" name="uploadInput" style="float:left" onchange="zzz5()">
+                  </td>
+                  <td style="width:160px">
+                      <input type="file" id="file2_name6" name="uploadInput" style="float:left" onchange="zzz6()">
+                  </td>
+
+              </tr>
+          </table>
+    <br /> <br />
+    영화 날짜별 시간 :
+    <select name="date1" onchange="changedate(this.value)">
+        <option value="1" class="today">오늘</option>
+        <option value="2" class="today">내일</option>
+        <option value="3" class="today">모레</option>
+        <option value="4" class="today">서울/홍대</option>
+        <option value="5" class="today">서울/왕십리</option>
+        <option value="6" class="today">서울/왕십리</option>
+    </select>
+    <br />
+    메인 상영관 - <span id="main_name"></span>
+    <table>
+        <tr>
+            <td><input type="text" value="" class="one" id="today1_movie1"></td>
+            <td><input type="text" value="" class="one" id="today2_movie1"></td>
+            <td><input type="text" value="" class="one" id="today3_movie1"></td>
+            <td><input type="text" value="" class="one" id="today4_movie1"></td>
+            <td><input type="text" value="" class="one" id="today5_movie1"></td>
+            <td><input type="text" value="" class="one" id="today6_movie1"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="수정" onclick="btn(0)" /></td>
+            <td><input type="button" value="수정" onclick="btn(1)" /></td>
+            <td><input type="button" value="수정" onclick="btn(2)" /></td>
+            <td><input type="button" value="수정" onclick="btn(3)" /></td>
+            <td><input type="button" value="수정" onclick="btn(4)" /></td>
+            <td><input type="button" value="수정" onclick="btn(5)" /></td>
+        </tr>
+    </table>
+    <br />
+    수입 :
+    <table style="border-collapse:collapse;">
+        <tr>
+            <td style="border:1px solid"><span class="t1"></span></td>
+            <td style="border:1px solid"><span class="t1"></span></td>
+            <td style="border:1px solid"><span class="t1"></span></td>
+            <td style="border:1px solid"><span class="t1"></span></td>
+            <td style="border:1px solid"><span class="t1"></span></td>
+            <td style="border:1px solid"><span class="t1"></span></td>
+        </tr>
+        <tr>
+            <td style="border:1px solid"><span id="price1"></span></td>
+            <td style="border:1px solid"><span id="price2"></span></td>
+            <td style="border:1px solid"><span id="price3"></span></td>
+            <td style="border:1px solid"><span id="price4"></span></td>
+            <td style="border:1px solid"><span id="price5"></span></td>
+            <td style="border:1px solid"><span id="price6"></span></td>
+        </tr>
+    </table>
+
+    총수입 : <span id="all_total"></span>
+    <br /><br />
+    초기화 (날짜별 영화좌석 초기화)
+    <table style="border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <td style="border:1px solid ;width:160px; text-align:center"><span class="t2"></span></td>
+                <td style="border:1px solid ;width:160px; text-align:center"><span class="t2"></span></td>
+                <td style="border:1px solid ;width:160px; text-align:center"><span class="t2"></span></td>
+                <td style="border:1px solid ;width:160px; text-align:center"><span class="t2"></span></td>
+                <td style="border:1px solid ;width:160px; text-align:center"><span class="t2"></span></td>
+                <td style="border:1px solid ;width:160px; text-align:center"><span class="t2"></span></td>
+            </tr>
+            <tr>
+                <td style="border:1px solid "><input style="width:160px; text-align:center" type="button" value="초기화" onclick="btn1(1)" /></td>
+                <td style="border:1px solid "><input style="width:160px; text-align:center" type="button" value="초기화" onclick="btn1(2)" /></td>
+                <td style="border:1px solid "><input style="width:160px; text-align:center" type="button" value="초기화" onclick="btn1(3)" /></td>
+                <td style="border:1px solid "><input style="width:160px; text-align:center" type="button" value="초기화" onclick="btn1(4)" /></td>
+                <td style="border:1px solid " t><input style="width:160px; text-align:center" type="button" value="초기화" onclick="btn1(5)" /></td>
+                <td style="border:1px solid "><input style="width:160px; text-align:center" type="button" value="초기화" onclick="btn1(6)" /></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <br />
+    <br />
+    <br />
+
+
+    자정되면 누르세요 : (영화 선택 필수해야합니다.)<br />
+    <input style="width:160px; height:50px;text-align:center" type="button" value="새로고침" onclick="btn2()" />
+    <br /><br />
+    나가기(수정사항 적용하기 위해서 눌러야합니다.): <br />
+    <input style="width:160px; height:50px;text-align:center" type="button" value="나가기" onclick="btn3()" />
+
+
+</body>
+</html>

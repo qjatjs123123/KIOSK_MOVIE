@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        html {      
+            height: 100%;
+        }
+        header{
+        width:100%;height:160px;text-align:center;color:black;font-size:x-large;
+        margin:0 auto; position:absolute;left:50%;margin-left:-50%;font-weight:900;
+        color:black; 
+        }
+        table{
+        opacity:1.0;
+        margin:auto;
+        font-size:large;
+        position:absolute;
+        height:5px;width:450px; font-size:small;margin:0 auto; left:50%; margin-left:-225px;
+        }
+        hr{
+            width:1000px;
+        }
+        .tb1{opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:-515px; top:30%;
+
+    }
+
+
+    .tb2{opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:335px; }
+    .tb3{
+        opacity:1.0;
+        margin:auto;
+        font-size:5px;
+        position:absolute;
+        height:5px;width:180px; font-size:small;margin:0 auto;left:50%;margin-left:330px; top:30%;
+    }
+        a:hover{
+            color:white;
+            
+        }
+        a:visited{
+             color:white;
+        }
+        body {
+            height: 100%;
+        }
+
+        section {
+            
+            width: 100%;
+            height: 350px;
+            font-size:initial;
+            background-color:azure;
+
+            
+        }
+        section1{
+            width : 100%;
+            height:300px;
+           
+        }
+
+        a:hover {
+            background-color: white;
+            text-decoration-line: underline;
+        }
+
+        a:visited {
+            font-weight: bold;
+            color: black;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+
+        .tb{
+           margin: 0 auto;
+            position: absolute;
+            right: 50%;
+            margin-right: 95px;
+        }
+        .center{
+            margin:0 auto; position:absolute;left:50%;margin-left:-207px;
+        }
+        .center1{
+            margin:0 auto; position:absolute;left:50%;margin-left:+6px;
+        }
+        .center0{
+            margin:0 auto; position:absolute;left:50%;margin-left:-50px;
+        }
+        .img1{
+            margin:0 auto; position:absolute;left:50%;margin-left:50px;
+        }
+        .radio{
+            margin:0 auto; position:absolute;left:50%;margin-left:227px;
+        }
+    </style>
+    <script>
+        function gopage() {
+            id = document.getElementById('id');
+            pw = document.getElementById('pw');
+
+            if (id.value == "admin" && pw.value == "1004") {
+                location.href = "관리자.html";
+            }
+            else {
+                alert("아이디 및 비밀번호를 확인하세요");
+            }
+
+            
+        }
+        function ad() {
+            window.open("https://event.lottecinema.co.kr/NLCHS/Event/EventTemplateInfo?eventId=101010016920005")
+        }
+        function ch_rd(num) {
+            var n = document.getElementById("imgshow");
+            switch (num) {
+                case 1:
+                    n.src = "리틀포레스트.PNG";
+                    break;
+                case 2:
+                    n.src = "1987.PNG";
+                    break;
+                case 3:
+                    n.src = "부산행.PNG";
+                    break;
+                case 4:
+                    n.src = "청년경찰.PNG";
+                    break;
+                case 5:
+                    n.src = "국제시장.PNG";
+                    break;
+                    
+            }
+        }
+
+    </script>
+    <title></title>
+</head>
+<body>
+    <header>
+    <p> <a href="중간과제.html" style="text-decoration:none;" target="_top">Ⓢ SUNNY CINEMA</a></p>
+    <table class="tb1">
+        <th>
+            <a href="https://www.facebook.com/LotteCinema.kr" style="text-decoration:none;" target="_blank">❤ 좋아요</a>
+        </th>
+        <th>
+            <a href="https://www.youtube.com/channel/UCi4KivcV3a3yhkycFsjpalQ" style="text-decoration:none;" target="_blank">♡ 구독하기</a>
+
+        </th>
+    </table>
+    <hr />
+    <table>
+        <tbody>
+
+        <th>
+            예매
+        </th>
+        <th>
+            영화
+        </th>
+        <th>
+            영화관
+        </th>
+        <th>
+            이벤트
+        </th>
+        <th>
+            스토어
+        </th>
+        </tbody>
+    </table>
+    <table class="tb2">
+        <th>
+            ☺ 회원가입
+        </th>
+        <th>
+            ꍏ 바로예매
+        </th>
+    </table>
+    <table class="tb3">
+        <th>
+            <a href="https://www.lottecinema.co.kr/NLCHS/Mypage/MemberVipzone" style="text-decoration:none;" target="_top">멤버십</a>
+        </th>
+        <th>
+            <a href="https://www.lottecinema.co.kr/NLCHS/Customer" style="text-decoration:none;" target="_top">고객센터</a>
+        </th>
+        <th>
+            <a href="로그인_중간과제.html" style="text-decoration:none;" target="_top">로그인</a>
+
+        </th>
+    </table>
+
+
+</header>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <section>
+        <form class="tb" methon="get">
+
+            <h1 class="center" style="font-size:xx-large;">로그인</h1>
+            <br /><br /><br />
+            <input style="height:50px; width:405px; font-size:x-large" type="text" id = "id" placeholder="아이디" />
+            <br /><br />
+            <input style="height:50px; width:405px;font-size:x-large" type="password" id="pw" placeholder="비밀번호" />
+            <br /><br />
+            <input class="center1" style="height:50px; font-size:x-large; width:200px; background-color:tomato;border-color:tomato; color:white;" type="button" onclick="gopage()" value="로그인" />
+            <input class="center" style="height:50px; font-size:x-large; width:200px; background-color:dimgray;border-color:dimgray;color:white" type="reset" value="초기화" />
+            <br><br /><br />
+            <p><a class="center0" style="font-size:x-large" href="회원가입_중간과제.html ">회원가입</a></p>
+
+        </form>
+        
+        <img id="imgshow" class="img1" src="리틀포레스트.png" width='455px' height="300px" />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <form class="radio">
+            <input type="radio" ; name="imgarr" id="img1" onclick="ch_rd(1)" checked />
+            <input type="radio" ; name="imgarr" id="img2" onclick="ch_rd(2)" />
+            <input type="radio" ; name="imgarr" id="img3" onclick="ch_rd(3)" />
+            <input type="radio" ; name="imgarr" id="img4" onclick="ch_rd(4)" />
+            <input type="radio" ; name="imgarr" id="img5" onclick="ch_rd(5)" />
+        </form>
+
+
+    </section>
+    <section1>
+        <img id="imgshow" src="광고.PNG" width='100%' height="300px" style="margin-top:100px; cursor:pointer" onclick="ad()"/>
+    </section1>
+</body>
+            
+</html>
